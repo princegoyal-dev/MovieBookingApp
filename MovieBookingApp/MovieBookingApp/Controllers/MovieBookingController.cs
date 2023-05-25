@@ -1,10 +1,14 @@
 ﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Primitives;
 using MovieBookingApp.Filters;
 using MovieBookingApp.Interfaces.IBusiness;
 using MovieBookingApp.Models;
+using System.IdentityModel.Tokens.Jwt;
+using System.IO;
 using System.Net.Sockets;
+using System.Security.Claims;
 
 namespace MovieBookingApp.Controllers
 {
@@ -58,15 +62,38 @@ namespace MovieBookingApp.Controllers
         [HttpGet("{loginId}/Forgot")]
         public async Task<ActionResult<string>> Forgot(string loginId, string newPassword)
         {
-            var passwordChangedStatus = await _userBusiness.ChangePassword(loginId, newPassword);
+            StringValues headerValues;
+            Request.Headers.TryGetValue("Authorization", out headerValues);
+            string jwt = headerValues[0].Substring(7);
+            var token = $"{jwt}";
+            var handler = new JwtSecurityTokenHandler();
+            var jsonToken = handler.ReadToken(token);
+            var tokenS = jsonToken as JwtSecurityToken;
+
+            if(tokenS == null)
+            {
+                return BadRequest("Bad Request");
+            }
+            var jti = tokenS.Claims.First(claim => claim.Type == ClaimTypes.Name).Value;
+
+            string passwordChangedStatus = "";
+            if (loginId == jti)
+            {
+                passwordChangedStatus = await _userBusiness.ChangePassword(loginId, newPassword);
+            } 
+            else
+            {
+                passwordChangedStatus = "Not Authorized";
+                return Unauthorized();
+            }
 
             if (!string.IsNullOrEmpty(passwordChangedStatus))
             {
                 return Ok(passwordChangedStatus);
             }
             return BadRequest(passwordChangedStatus);
-
         }
+
         [Authorize]
         [HttpGet("All")]
         public async Task<ActionResult<List<MovieDto>>> ViewAllMovies()
