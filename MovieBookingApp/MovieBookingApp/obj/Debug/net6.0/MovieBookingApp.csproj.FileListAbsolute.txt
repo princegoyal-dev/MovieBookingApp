@@ -1,0 +1,167 @@
+D:\CTS .net training\MovieBookingApp\MovieBookingApp\MovieBookingApp\obj\Debug\net6.0\MovieBookingApp.csproj.AssemblyReference.cache
+D:\CTS .net training\MovieBookingApp\MovieBookingApp\MovieBookingApp\obj\Debug\net6.0\MovieBookingApp.GeneratedMSBuildEditorConfig.editorconfig
+D:\CTS .net training\MovieBookingApp\MovieBookingApp\MovieBookingApp\obj\Debug\net6.0\MovieBookingApp.AssemblyInfoInputs.cache
+D:\CTS .net training\MovieBookingApp\MovieBookingApp\MovieBookingApp\obj\Debug\net6.0\MovieBookingApp.AssemblyInfo.cs
+D:\CTS .net training\MovieBookingApp\MovieBookingApp\MovieBookingApp\obj\Debug\net6.0\MovieBookingApp.csproj.CoreCompileInputs.cache
+D:\CTS .net training\MovieBookingApp\MovieBookingApp\MovieBookingApp\obj\Debug\net6.0\MovieBookingApp.MvcApplicationPartsAssemblyInfo.cs
+D:\CTS .net training\MovieBookingApp\MovieBookingApp\MovieBookingApp\obj\Debug\net6.0\MovieBookingApp.MvcApplicationPartsAssemblyInfo.cache
+D:\CTS .net training\MovieBookingApp\MovieBookingApp\MovieBookingApp\bin\Debug\net6.0\appsettings.Development.json
+D:\CTS .net training\MovieBookingApp\MovieBookingApp\MovieBookingApp\bin\Debug\net6.0\appsettings.json
+D:\CTS .net training\MovieBookingApp\MovieBookingApp\MovieBookingApp\bin\Debug\net6.0\MovieBookingApp.exe
+D:\CTS .net training\MovieBookingApp\MovieBookingApp\MovieBookingApp\bin\Debug\net6.0\MovieBookingApp.deps.json
+D:\CTS .net training\MovieBookingApp\MovieBookingApp\MovieBookingApp\bin\Debug\net6.0\MovieBookingApp.runtimeconfig.json
+D:\CTS .net training\MovieBookingApp\MovieBookingApp\MovieBookingApp\bin\Debug\net6.0\MovieBookingApp.dll
+D:\CTS .net training\MovieBookingApp\MovieBookingApp\MovieBookingApp\bin\Debug\net6.0\MovieBookingApp.pdb
+D:\CTS .net training\MovieBookingApp\MovieBookingApp\MovieBookingApp\bin\Debug\net6.0\AutoMapper.dll
+D:\CTS .net training\MovieBookingApp\MovieBookingApp\MovieBookingApp\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+D:\CTS .net training\MovieBookingApp\MovieBookingApp\MovieBookingApp\bin\Debug\net6.0\AWSSDK.Core.dll
+D:\CTS .net training\MovieBookingApp\MovieBookingApp\MovieBookingApp\bin\Debug\net6.0\AWSSDK.SecurityToken.dll
+D:\CTS .net training\MovieBookingApp\MovieBookingApp\MovieBookingApp\bin\Debug\net6.0\DnsClient.dll
+D:\CTS .net training\MovieBookingApp\MovieBookingApp\MovieBookingApp\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\CTS .net training\MovieBookingApp\MovieBookingApp\MovieBookingApp\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
+D:\CTS .net training\MovieBookingApp\MovieBookingApp\MovieBookingApp\bin\Debug\net6.0\Microsoft.IdentityModel.Abstractions.dll
+D:\CTS .net training\MovieBookingApp\MovieBookingApp\MovieBookingApp\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\CTS .net training\MovieBookingApp\MovieBookingApp\MovieBookingApp\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
+D:\CTS .net training\MovieBookingApp\MovieBookingApp\MovieBookingApp\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
+D:\CTS .net training\MovieBookingApp\MovieBookingApp\MovieBookingApp\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\CTS .net training\MovieBookingApp\MovieBookingApp\MovieBookingApp\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
+D:\CTS .net training\MovieBookingApp\MovieBookingApp\MovieBookingApp\bin\Debug\net6.0\Microsoft.OpenApi.dll
+D:\CTS .net training\MovieBookingApp\MovieBookingApp\MovieBookingApp\bin\Debug\net6.0\MongoDB.Bson.dll
+D:\CTS .net training\MovieBookingApp\MovieBookingApp\MovieBookingApp\bin\Debug\net6.0\MongoDB.Driver.dll
+D:\CTS .net training\MovieBookingApp\MovieBookingApp\MovieBookingApp\bin\Debug\net6.0\MongoDB.Driver.Core.dll
+D:\CTS .net training\MovieBookingApp\MovieBookingApp\MovieBookingApp\bin\Debug\net6.0\MongoDB.Libmongocrypt.dll
+D:\CTS .net training\MovieBookingApp\MovieBookingApp\MovieBookingApp\bin\Debug\net6.0\Scrutor.dll
+D:\CTS .net training\MovieBookingApp\MovieBookingApp\MovieBookingApp\bin\Debug\net6.0\SharpCompress.dll
+D:\CTS .net training\MovieBookingApp\MovieBookingApp\MovieBookingApp\bin\Debug\net6.0\Snappier.dll
+D:\CTS .net training\MovieBookingApp\MovieBookingApp\MovieBookingApp\bin\Debug\net6.0\Swashbuckle.AspNetCore.Filters.dll
+D:\CTS .net training\MovieBookingApp\MovieBookingApp\MovieBookingApp\bin\Debug\net6.0\Swashbuckle.AspNetCore.Filters.Abstractions.dll
+D:\CTS .net training\MovieBookingApp\MovieBookingApp\MovieBookingApp\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+D:\CTS .net training\MovieBookingApp\MovieBookingApp\MovieBookingApp\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+D:\CTS .net training\MovieBookingApp\MovieBookingApp\MovieBookingApp\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+D:\CTS .net training\MovieBookingApp\MovieBookingApp\MovieBookingApp\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
+D:\CTS .net training\MovieBookingApp\MovieBookingApp\MovieBookingApp\bin\Debug\net6.0\ZstdSharp.dll
+D:\CTS .net training\MovieBookingApp\MovieBookingApp\MovieBookingApp\bin\Debug\net6.0\runtimes\linux\native\libmongocrypt.so
+D:\CTS .net training\MovieBookingApp\MovieBookingApp\MovieBookingApp\bin\Debug\net6.0\runtimes\osx\native\libmongocrypt.dylib
+D:\CTS .net training\MovieBookingApp\MovieBookingApp\MovieBookingApp\bin\Debug\net6.0\runtimes\win\native\mongocrypt.dll
+D:\CTS .net training\MovieBookingApp\MovieBookingApp\MovieBookingApp\obj\Debug\net6.0\staticwebassets\msbuild.MovieBookingApp.Microsoft.AspNetCore.StaticWebAssets.props
+D:\CTS .net training\MovieBookingApp\MovieBookingApp\MovieBookingApp\obj\Debug\net6.0\staticwebassets\msbuild.build.MovieBookingApp.props
+D:\CTS .net training\MovieBookingApp\MovieBookingApp\MovieBookingApp\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.MovieBookingApp.props
+D:\CTS .net training\MovieBookingApp\MovieBookingApp\MovieBookingApp\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.MovieBookingApp.props
+D:\CTS .net training\MovieBookingApp\MovieBookingApp\MovieBookingApp\obj\Debug\net6.0\staticwebassets.pack.json
+D:\CTS .net training\MovieBookingApp\MovieBookingApp\MovieBookingApp\obj\Debug\net6.0\staticwebassets.build.json
+D:\CTS .net training\MovieBookingApp\MovieBookingApp\MovieBookingApp\obj\Debug\net6.0\staticwebassets.development.json
+D:\CTS .net training\MovieBookingApp\MovieBookingApp\MovieBookingApp\obj\Debug\net6.0\scopedcss\bundle\MovieBookingApp.styles.css
+D:\CTS .net training\MovieBookingApp\MovieBookingApp\MovieBookingApp\obj\Debug\net6.0\MovieBookingApp.csproj.CopyComplete
+D:\CTS .net training\MovieBookingApp\MovieBookingApp\MovieBookingApp\obj\Debug\net6.0\MovieBookingApp.dll
+D:\CTS .net training\MovieBookingApp\MovieBookingApp\MovieBookingApp\obj\Debug\net6.0\refint\MovieBookingApp.dll
+D:\CTS .net training\MovieBookingApp\MovieBookingApp\MovieBookingApp\obj\Debug\net6.0\MovieBookingApp.pdb
+D:\CTS .net training\MovieBookingApp\MovieBookingApp\MovieBookingApp\obj\Debug\net6.0\MovieBookingApp.genruntimeconfig.cache
+D:\CTS .net training\MovieBookingApp\MovieBookingApp\MovieBookingApp\obj\Debug\net6.0\ref\MovieBookingApp.dll
+C:\Users\welcome\Desktop\rfqproject\MovieBookingApp\MovieBookingApp\bin\Debug\net6.0\appsettings.Development.json
+C:\Users\welcome\Desktop\rfqproject\MovieBookingApp\MovieBookingApp\bin\Debug\net6.0\appsettings.json
+C:\Users\welcome\Desktop\rfqproject\MovieBookingApp\MovieBookingApp\bin\Debug\net6.0\MovieBookingApp.exe
+C:\Users\welcome\Desktop\rfqproject\MovieBookingApp\MovieBookingApp\bin\Debug\net6.0\MovieBookingApp.deps.json
+C:\Users\welcome\Desktop\rfqproject\MovieBookingApp\MovieBookingApp\bin\Debug\net6.0\MovieBookingApp.runtimeconfig.json
+C:\Users\welcome\Desktop\rfqproject\MovieBookingApp\MovieBookingApp\bin\Debug\net6.0\MovieBookingApp.dll
+C:\Users\welcome\Desktop\rfqproject\MovieBookingApp\MovieBookingApp\bin\Debug\net6.0\MovieBookingApp.pdb
+C:\Users\welcome\Desktop\rfqproject\MovieBookingApp\MovieBookingApp\bin\Debug\net6.0\AutoMapper.dll
+C:\Users\welcome\Desktop\rfqproject\MovieBookingApp\MovieBookingApp\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\welcome\Desktop\rfqproject\MovieBookingApp\MovieBookingApp\bin\Debug\net6.0\AWSSDK.Core.dll
+C:\Users\welcome\Desktop\rfqproject\MovieBookingApp\MovieBookingApp\bin\Debug\net6.0\AWSSDK.SecurityToken.dll
+C:\Users\welcome\Desktop\rfqproject\MovieBookingApp\MovieBookingApp\bin\Debug\net6.0\DnsClient.dll
+C:\Users\welcome\Desktop\rfqproject\MovieBookingApp\MovieBookingApp\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\welcome\Desktop\rfqproject\MovieBookingApp\MovieBookingApp\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\welcome\Desktop\rfqproject\MovieBookingApp\MovieBookingApp\bin\Debug\net6.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\welcome\Desktop\rfqproject\MovieBookingApp\MovieBookingApp\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\welcome\Desktop\rfqproject\MovieBookingApp\MovieBookingApp\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\welcome\Desktop\rfqproject\MovieBookingApp\MovieBookingApp\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\welcome\Desktop\rfqproject\MovieBookingApp\MovieBookingApp\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\welcome\Desktop\rfqproject\MovieBookingApp\MovieBookingApp\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\welcome\Desktop\rfqproject\MovieBookingApp\MovieBookingApp\bin\Debug\net6.0\Microsoft.OpenApi.dll
+C:\Users\welcome\Desktop\rfqproject\MovieBookingApp\MovieBookingApp\bin\Debug\net6.0\MongoDB.Bson.dll
+C:\Users\welcome\Desktop\rfqproject\MovieBookingApp\MovieBookingApp\bin\Debug\net6.0\MongoDB.Driver.dll
+C:\Users\welcome\Desktop\rfqproject\MovieBookingApp\MovieBookingApp\bin\Debug\net6.0\MongoDB.Driver.Core.dll
+C:\Users\welcome\Desktop\rfqproject\MovieBookingApp\MovieBookingApp\bin\Debug\net6.0\MongoDB.Libmongocrypt.dll
+C:\Users\welcome\Desktop\rfqproject\MovieBookingApp\MovieBookingApp\bin\Debug\net6.0\Scrutor.dll
+C:\Users\welcome\Desktop\rfqproject\MovieBookingApp\MovieBookingApp\bin\Debug\net6.0\SharpCompress.dll
+C:\Users\welcome\Desktop\rfqproject\MovieBookingApp\MovieBookingApp\bin\Debug\net6.0\Snappier.dll
+C:\Users\welcome\Desktop\rfqproject\MovieBookingApp\MovieBookingApp\bin\Debug\net6.0\Swashbuckle.AspNetCore.Filters.dll
+C:\Users\welcome\Desktop\rfqproject\MovieBookingApp\MovieBookingApp\bin\Debug\net6.0\Swashbuckle.AspNetCore.Filters.Abstractions.dll
+C:\Users\welcome\Desktop\rfqproject\MovieBookingApp\MovieBookingApp\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\welcome\Desktop\rfqproject\MovieBookingApp\MovieBookingApp\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\welcome\Desktop\rfqproject\MovieBookingApp\MovieBookingApp\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\welcome\Desktop\rfqproject\MovieBookingApp\MovieBookingApp\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\welcome\Desktop\rfqproject\MovieBookingApp\MovieBookingApp\bin\Debug\net6.0\ZstdSharp.dll
+C:\Users\welcome\Desktop\rfqproject\MovieBookingApp\MovieBookingApp\bin\Debug\net6.0\runtimes\linux\native\libmongocrypt.so
+C:\Users\welcome\Desktop\rfqproject\MovieBookingApp\MovieBookingApp\bin\Debug\net6.0\runtimes\osx\native\libmongocrypt.dylib
+C:\Users\welcome\Desktop\rfqproject\MovieBookingApp\MovieBookingApp\bin\Debug\net6.0\runtimes\win\native\mongocrypt.dll
+C:\Users\welcome\Desktop\rfqproject\MovieBookingApp\MovieBookingApp\obj\Debug\net6.0\MovieBookingApp.csproj.AssemblyReference.cache
+C:\Users\welcome\Desktop\rfqproject\MovieBookingApp\MovieBookingApp\obj\Debug\net6.0\MovieBookingApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\welcome\Desktop\rfqproject\MovieBookingApp\MovieBookingApp\obj\Debug\net6.0\MovieBookingApp.AssemblyInfoInputs.cache
+C:\Users\welcome\Desktop\rfqproject\MovieBookingApp\MovieBookingApp\obj\Debug\net6.0\MovieBookingApp.AssemblyInfo.cs
+C:\Users\welcome\Desktop\rfqproject\MovieBookingApp\MovieBookingApp\obj\Debug\net6.0\MovieBookingApp.csproj.CoreCompileInputs.cache
+C:\Users\welcome\Desktop\rfqproject\MovieBookingApp\MovieBookingApp\obj\Debug\net6.0\MovieBookingApp.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\welcome\Desktop\rfqproject\MovieBookingApp\MovieBookingApp\obj\Debug\net6.0\MovieBookingApp.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\welcome\Desktop\rfqproject\MovieBookingApp\MovieBookingApp\obj\Debug\net6.0\staticwebassets.build.json
+C:\Users\welcome\Desktop\rfqproject\MovieBookingApp\MovieBookingApp\obj\Debug\net6.0\staticwebassets.development.json
+C:\Users\welcome\Desktop\rfqproject\MovieBookingApp\MovieBookingApp\obj\Debug\net6.0\scopedcss\bundle\MovieBookingApp.styles.css
+C:\Users\welcome\Desktop\rfqproject\MovieBookingApp\MovieBookingApp\obj\Debug\net6.0\MovieBookingApp.csproj.CopyComplete
+C:\Users\welcome\Desktop\rfqproject\MovieBookingApp\MovieBookingApp\obj\Debug\net6.0\MovieBookingApp.dll
+C:\Users\welcome\Desktop\rfqproject\MovieBookingApp\MovieBookingApp\obj\Debug\net6.0\refint\MovieBookingApp.dll
+C:\Users\welcome\Desktop\rfqproject\MovieBookingApp\MovieBookingApp\obj\Debug\net6.0\MovieBookingApp.pdb
+C:\Users\welcome\Desktop\rfqproject\MovieBookingApp\MovieBookingApp\obj\Debug\net6.0\MovieBookingApp.genruntimeconfig.cache
+C:\Users\welcome\Desktop\rfqproject\MovieBookingApp\MovieBookingApp\obj\Debug\net6.0\ref\MovieBookingApp.dll
+C:\Users\User 2GB\Downloads\MovieBookingApp\MovieBookingApp\MovieBookingApp\bin\Debug\net6.0\appsettings.Development.json
+C:\Users\User 2GB\Downloads\MovieBookingApp\MovieBookingApp\MovieBookingApp\bin\Debug\net6.0\appsettings.json
+C:\Users\User 2GB\Downloads\MovieBookingApp\MovieBookingApp\MovieBookingApp\bin\Debug\net6.0\MovieBookingApp.exe
+C:\Users\User 2GB\Downloads\MovieBookingApp\MovieBookingApp\MovieBookingApp\bin\Debug\net6.0\MovieBookingApp.deps.json
+C:\Users\User 2GB\Downloads\MovieBookingApp\MovieBookingApp\MovieBookingApp\bin\Debug\net6.0\MovieBookingApp.runtimeconfig.json
+C:\Users\User 2GB\Downloads\MovieBookingApp\MovieBookingApp\MovieBookingApp\bin\Debug\net6.0\MovieBookingApp.dll
+C:\Users\User 2GB\Downloads\MovieBookingApp\MovieBookingApp\MovieBookingApp\bin\Debug\net6.0\MovieBookingApp.pdb
+C:\Users\User 2GB\Downloads\MovieBookingApp\MovieBookingApp\MovieBookingApp\bin\Debug\net6.0\AutoMapper.dll
+C:\Users\User 2GB\Downloads\MovieBookingApp\MovieBookingApp\MovieBookingApp\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\User 2GB\Downloads\MovieBookingApp\MovieBookingApp\MovieBookingApp\bin\Debug\net6.0\AWSSDK.Core.dll
+C:\Users\User 2GB\Downloads\MovieBookingApp\MovieBookingApp\MovieBookingApp\bin\Debug\net6.0\AWSSDK.SecurityToken.dll
+C:\Users\User 2GB\Downloads\MovieBookingApp\MovieBookingApp\MovieBookingApp\bin\Debug\net6.0\DnsClient.dll
+C:\Users\User 2GB\Downloads\MovieBookingApp\MovieBookingApp\MovieBookingApp\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\User 2GB\Downloads\MovieBookingApp\MovieBookingApp\MovieBookingApp\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\User 2GB\Downloads\MovieBookingApp\MovieBookingApp\MovieBookingApp\bin\Debug\net6.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\User 2GB\Downloads\MovieBookingApp\MovieBookingApp\MovieBookingApp\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\User 2GB\Downloads\MovieBookingApp\MovieBookingApp\MovieBookingApp\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\User 2GB\Downloads\MovieBookingApp\MovieBookingApp\MovieBookingApp\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\User 2GB\Downloads\MovieBookingApp\MovieBookingApp\MovieBookingApp\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\User 2GB\Downloads\MovieBookingApp\MovieBookingApp\MovieBookingApp\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\User 2GB\Downloads\MovieBookingApp\MovieBookingApp\MovieBookingApp\bin\Debug\net6.0\Microsoft.OpenApi.dll
+C:\Users\User 2GB\Downloads\MovieBookingApp\MovieBookingApp\MovieBookingApp\bin\Debug\net6.0\MongoDB.Bson.dll
+C:\Users\User 2GB\Downloads\MovieBookingApp\MovieBookingApp\MovieBookingApp\bin\Debug\net6.0\MongoDB.Driver.dll
+C:\Users\User 2GB\Downloads\MovieBookingApp\MovieBookingApp\MovieBookingApp\bin\Debug\net6.0\MongoDB.Driver.Core.dll
+C:\Users\User 2GB\Downloads\MovieBookingApp\MovieBookingApp\MovieBookingApp\bin\Debug\net6.0\MongoDB.Libmongocrypt.dll
+C:\Users\User 2GB\Downloads\MovieBookingApp\MovieBookingApp\MovieBookingApp\bin\Debug\net6.0\Scrutor.dll
+C:\Users\User 2GB\Downloads\MovieBookingApp\MovieBookingApp\MovieBookingApp\bin\Debug\net6.0\SharpCompress.dll
+C:\Users\User 2GB\Downloads\MovieBookingApp\MovieBookingApp\MovieBookingApp\bin\Debug\net6.0\Snappier.dll
+C:\Users\User 2GB\Downloads\MovieBookingApp\MovieBookingApp\MovieBookingApp\bin\Debug\net6.0\Swashbuckle.AspNetCore.Filters.dll
+C:\Users\User 2GB\Downloads\MovieBookingApp\MovieBookingApp\MovieBookingApp\bin\Debug\net6.0\Swashbuckle.AspNetCore.Filters.Abstractions.dll
+C:\Users\User 2GB\Downloads\MovieBookingApp\MovieBookingApp\MovieBookingApp\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\User 2GB\Downloads\MovieBookingApp\MovieBookingApp\MovieBookingApp\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\User 2GB\Downloads\MovieBookingApp\MovieBookingApp\MovieBookingApp\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\User 2GB\Downloads\MovieBookingApp\MovieBookingApp\MovieBookingApp\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\User 2GB\Downloads\MovieBookingApp\MovieBookingApp\MovieBookingApp\bin\Debug\net6.0\ZstdSharp.dll
+C:\Users\User 2GB\Downloads\MovieBookingApp\MovieBookingApp\MovieBookingApp\bin\Debug\net6.0\runtimes\linux\native\libmongocrypt.so
+C:\Users\User 2GB\Downloads\MovieBookingApp\MovieBookingApp\MovieBookingApp\bin\Debug\net6.0\runtimes\osx\native\libmongocrypt.dylib
+C:\Users\User 2GB\Downloads\MovieBookingApp\MovieBookingApp\MovieBookingApp\bin\Debug\net6.0\runtimes\win\native\mongocrypt.dll
+C:\Users\User 2GB\Downloads\MovieBookingApp\MovieBookingApp\MovieBookingApp\obj\Debug\net6.0\MovieBookingApp.csproj.AssemblyReference.cache
+C:\Users\User 2GB\Downloads\MovieBookingApp\MovieBookingApp\MovieBookingApp\obj\Debug\net6.0\MovieBookingApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User 2GB\Downloads\MovieBookingApp\MovieBookingApp\MovieBookingApp\obj\Debug\net6.0\MovieBookingApp.AssemblyInfoInputs.cache
+C:\Users\User 2GB\Downloads\MovieBookingApp\MovieBookingApp\MovieBookingApp\obj\Debug\net6.0\MovieBookingApp.AssemblyInfo.cs
+C:\Users\User 2GB\Downloads\MovieBookingApp\MovieBookingApp\MovieBookingApp\obj\Debug\net6.0\MovieBookingApp.csproj.CoreCompileInputs.cache
+C:\Users\User 2GB\Downloads\MovieBookingApp\MovieBookingApp\MovieBookingApp\obj\Debug\net6.0\MovieBookingApp.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\User 2GB\Downloads\MovieBookingApp\MovieBookingApp\MovieBookingApp\obj\Debug\net6.0\MovieBookingApp.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\User 2GB\Downloads\MovieBookingApp\MovieBookingApp\MovieBookingApp\obj\Debug\net6.0\staticwebassets.build.json
+C:\Users\User 2GB\Downloads\MovieBookingApp\MovieBookingApp\MovieBookingApp\obj\Debug\net6.0\staticwebassets.development.json
+C:\Users\User 2GB\Downloads\MovieBookingApp\MovieBookingApp\MovieBookingApp\obj\Debug\net6.0\scopedcss\bundle\MovieBookingApp.styles.css
+C:\Users\User 2GB\Downloads\MovieBookingApp\MovieBookingApp\MovieBookingApp\obj\Debug\net6.0\MovieBookingApp.csproj.CopyComplete
+C:\Users\User 2GB\Downloads\MovieBookingApp\MovieBookingApp\MovieBookingApp\obj\Debug\net6.0\MovieBookingApp.dll
+C:\Users\User 2GB\Downloads\MovieBookingApp\MovieBookingApp\MovieBookingApp\obj\Debug\net6.0\refint\MovieBookingApp.dll
+C:\Users\User 2GB\Downloads\MovieBookingApp\MovieBookingApp\MovieBookingApp\obj\Debug\net6.0\MovieBookingApp.pdb
+C:\Users\User 2GB\Downloads\MovieBookingApp\MovieBookingApp\MovieBookingApp\obj\Debug\net6.0\MovieBookingApp.genruntimeconfig.cache
+C:\Users\User 2GB\Downloads\MovieBookingApp\MovieBookingApp\MovieBookingApp\obj\Debug\net6.0\ref\MovieBookingApp.dll
