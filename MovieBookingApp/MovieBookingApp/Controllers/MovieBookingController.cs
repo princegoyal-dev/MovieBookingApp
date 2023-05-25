@@ -54,7 +54,7 @@ namespace MovieBookingApp.Controllers
                 return BadRequest("Incorrect LoginId or Password");
             }
         }
-
+        [Authorize]
         [HttpGet("{loginId}/Forgot")]
         public async Task<ActionResult<string>> Forgot(string loginId, string newPassword)
         {
@@ -67,7 +67,7 @@ namespace MovieBookingApp.Controllers
             return BadRequest(passwordChangedStatus);
 
         }
-
+        [Authorize]
         [HttpGet("All")]
         public async Task<ActionResult<List<MovieDto>>> ViewAllMovies()
         {
@@ -79,7 +79,7 @@ namespace MovieBookingApp.Controllers
             }
             return NoContent();
         }
-
+        [Authorize]
         [HttpGet("Movies/Search/MovieName")]
         public async Task<ActionResult<MovieDto>> SearchMovie(string movieName)
         {
@@ -91,7 +91,7 @@ namespace MovieBookingApp.Controllers
             }
             return NoContent();
         }
-
+        [Authorize]
         [HttpPost("{moviename}/add")]
         [ServiceFilter(typeof(NullCheckFilter))]
         public async Task<ActionResult<string>> AddTickets(TicketDto ticket)
@@ -104,7 +104,7 @@ namespace MovieBookingApp.Controllers
             }
             return BadRequest(status);
         }
-
+        [Authorize]
         [HttpPost("{moviename}/delete/{id}")]
         [ServiceFilter(typeof(NullCheckFilter))]
         public async Task<ActionResult<string>> DeleteTickets([FromRoute]string id = null)
@@ -117,7 +117,7 @@ namespace MovieBookingApp.Controllers
             }
             return BadRequest(status);
         }
-
+        [Authorize]
         [HttpPost("{moviename}/update/{ticket}")]
         [ServiceFilter(typeof(NullCheckFilter))]
         public async Task<ActionResult<string>> UpdateTicket(Ticket ticket)
