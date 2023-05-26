@@ -1,7 +1,10 @@
 ﻿using AutoMapper;
+using Microsoft.Extensions.Primitives;
 using MovieBookingApp.Interfaces.IBusiness;
 using MovieBookingApp.Interfaces.IRepository;
 using MovieBookingApp.Models;
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
 
 namespace MovieBookingApp.Business
 {
@@ -74,6 +77,30 @@ namespace MovieBookingApp.Business
             return token;
         }
 
+        public Task<string> ValidateRequest(string loginId, StringValues headerValues)
+        {
+            string jwt = headerValues[0].Substring(7);
+            var handler = new JwtSecurityTokenHandler();
+            var jsonToken = handler.ReadToken(jwt);
+            var jwtTypeCastToken = jsonToken as JwtSecurityToken;
+
+            if (jwtTypeCastToken == null)
+            {
+                return Task.FromResult("Bad Request");
+            }
+
+            var extractedLoginId = jwtTypeCastToken.Claims.First(claim => claim.Type == ClaimTypes.Name).Value;
+
+            if(loginId == extractedLoginId)
+            {
+                return Task.FromResult("Valid Request");
+            }
+            else
+            {
+                return Task.FromResult("Invalid Request");
+            }
+        }
+
         public async Task<string> ChangePassword(string loginId, string newPassword)
         {
             string status = string.Empty;
@@ -97,6 +124,39 @@ namespace MovieBookingApp.Business
                 else
                 {
                     status = $"Incorrect username {loginId}";
+                }
+            }
+            catch (Exception)
+            {
+                status = string.Empty;
+            }
+
+            return status;
+        }
+
+        public async Task<string> ChangePassword(string loginId, string oldPassword, string newPassword)
+        {
+            string status = string.Empty;
+            try
+            {
+                var existingUserModel = await _userRepository.GetUserByLoginIdPassword(loginId, oldPassword);
+                if (existingUserModel is not null)
+                {
+                    _identityBusiness.CreatePasswordHashSalt(newPassword, out byte[] newPasswordHash, out byte[] newPasswordSalt);
+                    existingUserModel.Password = newPassword;
+                    existingUserModel.PasswordHash = newPasswordHash;
+                    existingUserModel.PasswordSalt = newPasswordSalt;
+
+                    var isUpdateSuccess = await _userRepository.UpdateUser(existingUserModel);
+
+                    if (isUpdateSuccess)
+                    {
+                        status = "Password changed successfully";
+                    }
+                }
+                else
+                {
+                    status = $"Incorrect username and password";
                 }
             }
             catch (Exception)

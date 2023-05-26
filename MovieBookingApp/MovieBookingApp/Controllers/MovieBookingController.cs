@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
 using Microsoft.Extensions.Primitives;
 using MovieBookingApp.Filters;
 using MovieBookingApp.Interfaces.IBusiness;
@@ -58,35 +59,35 @@ namespace MovieBookingApp.Controllers
                 return BadRequest("Incorrect LoginId or Password");
             }
         }
+
         [Authorize]
         [HttpGet("{loginId}/Forgot")]
         public async Task<ActionResult<string>> Forgot(string loginId, string newPassword)
         {
             StringValues headerValues;
             Request.Headers.TryGetValue("Authorization", out headerValues);
-            string jwt = headerValues[0].Substring(7);
-            var token = $"{jwt}";
-            var handler = new JwtSecurityTokenHandler();
-            var jsonToken = handler.ReadToken(token);
-            var tokenS = jsonToken as JwtSecurityToken;
+            var result = await _userBusiness.ValidateRequest(loginId, headerValues);
 
-            if(tokenS == null)
+            switch(result.ToLower())
             {
-                return BadRequest("Bad Request");
-            }
-            var jti = tokenS.Claims.First(claim => claim.Type == ClaimTypes.Name).Value;
-
-            string passwordChangedStatus = "";
-            if (loginId == jti)
-            {
-                passwordChangedStatus = await _userBusiness.ChangePassword(loginId, newPassword);
-            } 
-            else
-            {
-                passwordChangedStatus = "Not Authorized";
-                return Unauthorized();
+                case "bad request": return BadRequest();
+                case "invalid request": return Unauthorized();
             }
 
+            var passwordChangedStatus = await _userBusiness.ChangePassword(loginId, newPassword);
+            
+            if (!string.IsNullOrEmpty(passwordChangedStatus))
+            {
+                return Ok(passwordChangedStatus);
+            }
+            return BadRequest(passwordChangedStatus);
+        }
+
+        [HttpGet("{loginId}/changePassword")]
+        public async Task<ActionResult<string>> Forgot(string loginId, string oldPassword, string newPassword)
+        {
+            var passwordChangedStatus = await _userBusiness.ChangePassword(loginId, oldPassword, newPassword);
+            
             if (!string.IsNullOrEmpty(passwordChangedStatus))
             {
                 return Ok(passwordChangedStatus);

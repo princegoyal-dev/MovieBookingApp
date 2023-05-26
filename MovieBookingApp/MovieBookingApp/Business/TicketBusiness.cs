@@ -18,21 +18,11 @@ namespace MovieBookingApp.Business
 
         public async Task<string> AddTicket(TicketDto ticket)
         {
-            //string userId = string.Empty;
             string status = string.Empty;
             try
             {
-                //var existingUser = await _ticketRepository.GetUser(user.LoginId, user.Email);
-                //var existingTicketModel = await _ticketRepository.GetMovieByMovieName(moviename);
-
-                //_identityBusiness.CreatePasswordHashSalt(user.Password, out byte[] passwordHash, out byte[] passwordSalt);
-                //userId = Guid.NewGuid().ToString();
-                
                 var ticketModel = _mapper.Map<Ticket>(ticket);
                 ticketModel.Id = Guid.NewGuid().ToString();
-                //userModel.Id = userId;
-                //userModel.PasswordHash = passwordHash;
-                //userModel.PasswordSalt = passwordSalt;
                 var isTicketInserted = await _ticketRepository.AddTicket(ticketModel);
 
                 if (isTicketInserted)
