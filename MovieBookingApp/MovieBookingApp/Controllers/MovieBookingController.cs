@@ -84,7 +84,7 @@ namespace MovieBookingApp.Controllers
         }
 
         [HttpGet("{loginId}/changePassword")]
-        public async Task<ActionResult<string>> Forgot(string loginId, string oldPassword, string newPassword)
+        public async Task<ActionResult<string>> ChangePassword(string loginId, string oldPassword, string newPassword)
         {
             var passwordChangedStatus = await _userBusiness.ChangePassword(loginId, oldPassword, newPassword);
             
@@ -119,12 +119,16 @@ namespace MovieBookingApp.Controllers
             }
             return NoContent();
         }
+
         [Authorize]
-        [HttpPost("{moviename}/add")]
+        [HttpPost("ticket/bookticket")]
         [ServiceFilter(typeof(NullCheckFilter))]
         public async Task<ActionResult<string>> AddTickets(TicketDto ticket)
         {
-            var status = await _ticketBusiness.AddTicket(ticket);
+            string status = null;
+
+            if(ticket.NumberOfTickets > 0)
+                status = await _ticketBusiness.AddTicket(ticket);
 
             if (!string.IsNullOrEmpty(status))
             {
@@ -132,8 +136,26 @@ namespace MovieBookingApp.Controllers
             }
             return BadRequest(status);
         }
+
+        [Authorize("Admin")]
+        [HttpPost("movie/add")]
+        [ServiceFilter(typeof(NullCheckFilter))]
+        public async Task<ActionResult<string>> AddMovie(Movie movie)
+        {
+            string status = null;
+
+            if (movie.TicketsAlloted > 0 && movie.TicketsBooked >= 0)
+                status = await _movieBusiness.AddMovie(movie);
+
+            if (!string.IsNullOrEmpty(status))
+            {
+                return Ok(status);
+            }
+            return BadRequest(status);
+        }
+
         [Authorize]
-        [HttpPost("{moviename}/delete/{id}")]
+        [HttpGet("ticket/delete/{id}")]
         [ServiceFilter(typeof(NullCheckFilter))]
         public async Task<ActionResult<string>> DeleteTickets([FromRoute]string id = null)
         {
@@ -145,12 +167,16 @@ namespace MovieBookingApp.Controllers
             }
             return BadRequest(status);
         }
+
         [Authorize]
-        [HttpPost("{moviename}/update/{ticket}")]
+        [HttpPost("ticket/update")]
         [ServiceFilter(typeof(NullCheckFilter))]
         public async Task<ActionResult<string>> UpdateTicket(Ticket ticket)
         {
-            var status = await _ticketBusiness.UpdateTicket(ticket);
+            string status = null;
+
+            if (ticket.NumberOfTickets > 0)
+                status = await _ticketBusiness.UpdateTicket(ticket);
 
             if (!string.IsNullOrEmpty(status))
             {

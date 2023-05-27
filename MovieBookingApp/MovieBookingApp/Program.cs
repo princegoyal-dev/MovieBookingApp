@@ -11,6 +11,7 @@ using Microsoft.IdentityModel.Tokens;
 using Swashbuckle.AspNetCore.Filters;
 using System.Text;
 using Microsoft.OpenApi.Models;
+using System.Security.Claims;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -76,11 +77,17 @@ void DependencyInjection()
                 IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8
                 .GetBytes(builder.Configuration.GetSection("AppSettings:Token").Value)),
                 ValidateIssuer = false,
-                ValidateAudience = false
+                ValidateAudience = false,
             };
         });
 
-
+    builder.Services.AddAuthorization(options =>
+    {
+        options.AddPolicy(
+            "Admin",
+            policy => policy.RequireClaim(ClaimTypes.Role, "Admin")
+        );
+    });
 
     builder.Services.AddScoped<NullCheckFilter>();
 

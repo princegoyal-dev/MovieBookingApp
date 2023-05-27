@@ -32,6 +32,13 @@ namespace MovieBookingApp.Repository
             return movies.ToList();
         }
 
+        public async Task<bool> AddMovie(Movie movie)
+        {
+            await _movies.InsertOneAsync(movie);
+
+            return true;
+        }
+
         //public async Task<ActionResult> GetIsAvailable(MovieDto movieDto)
         //{
         //    TicketStatusResponse response = new TicketStatusResponse();

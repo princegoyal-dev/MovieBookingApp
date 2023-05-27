@@ -1,14 +1,15 @@
 ﻿using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
 
 namespace MovieBookingApp.Models
 {
     [BsonIgnoreExtraElements]
     public class Movie
     {
+        [JsonIgnore]
         [BsonId]
-        [BsonRepresentation(BsonType.ObjectId)]
         public string Id { get; set; } = string.Empty;
         [BsonElement("name")]
         public string Name { get; set; } = string.Empty;
@@ -18,8 +19,6 @@ namespace MovieBookingApp.Models
         public int TicketsAlloted { get; set; }
         [BsonElement("ticketsBooked")]
         public int TicketsBooked { get; set; }
-        //[BsonElement("ticketStatus")]
-        //public string TicketStatus { get; set; }
     }
 
     //[BsonIgnoreExtraElements]

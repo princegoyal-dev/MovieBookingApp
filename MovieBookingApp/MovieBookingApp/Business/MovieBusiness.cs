@@ -55,6 +55,20 @@ namespace MovieBookingApp.Business
             return moviesView;
         }
 
+        public async Task<string> AddMovie(Movie movie)
+        {
+            try
+            {
+                movie.Id = Guid.NewGuid().ToString();
+                await _movieRepository.AddMovie(movie);
+            }
+            catch (Exception)
+            {
+                return "invalid request";
+            }
+            return "movie added successfully";
+        }
+
         public async Task<TicketStatusResponse> UpdateMovieTicketStatus(string moviename, string ticket)
         {
             TicketStatusResponse response = new TicketStatusResponse();

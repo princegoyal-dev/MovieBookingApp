@@ -1,4 +1,6 @@
-﻿using Microsoft.IdentityModel.Tokens;
+﻿using Amazon.Auth.AccessControlPolicy;
+using Microsoft.IdentityModel.Tokens;
+using MongoDB.Driver;
 using MovieBookingApp.Interfaces.IBusiness;
 using MovieBookingApp.Models;
 using System.IdentityModel.Tokens.Jwt;
@@ -37,12 +39,24 @@ namespace MovieBookingApp.Business
         public string CreateToken(User user)
         {
             string token = string.Empty;
-
-            List<Claim> claims = new()
+            
+            List<Claim> claims;
+            if (user.LoginId == "PrinceAdmin")
             {
-                new Claim(ClaimTypes.Name, user.LoginId)
-            };
-
+                claims = new()
+                {
+                    new Claim(ClaimTypes.Name, user.LoginId),
+                    new Claim(ClaimTypes.Role, "Admin")
+                };
+            } 
+            else
+            {
+                claims = new()
+                {
+                    new Claim(ClaimTypes.Name, user.LoginId),
+                    new Claim(ClaimTypes.Role, "User")
+                };
+            }
             var value = _configuration.GetSection("AppSettings:Token").Value;
 
             var key = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes(
