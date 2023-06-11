@@ -1,7 +1,7 @@
 import React, { Fragment, useState } from 'react'
 import axios from 'axios';
 
-const Login = () => {
+const Forgot = () => {
 
     const [message, setMessage] = useState("");
     const [showResult, setShowResult] = useState(false);
@@ -12,23 +12,23 @@ const Login = () => {
         event.preventDefault();
         const data = {
             "loginId": event.target.loginId.value,
-            "password": event.target.password.value,
+            "newPassword": event.target.newPassword.value,
         }
         setShowResult(true);
         // event.target.reset();
-        await axios.post('https://localhost:7222/api/MovieBooking/Login', data)
+        await axios.post('https://localhost:7222/api/MovieBooking/{loginId}/Forgot', data)
         .then((response) => {
-            setMessage("Authentication Successful");
+            setMessage("Password Reset Successful");
         })
         .catch(error => {
             setMessage("Some Error Occured");
         });
     };
 
-function Login() {
+function Forgot() {
     return (
         <form onSubmit={handleSubmit}>
-            <h1>Login Page</h1>
+            <h1>Forgot Password</h1>
             <br />
             <table>
                 <tbody>
@@ -42,17 +42,17 @@ function Login() {
                     </tr>
                     <tr>
                         <td>
-                           <label>Password</label>
+                           <label>New Password</label>
                         </td>
                         <td>
-                            <input type='text' name='Password' placeholder='Password'></input>
+                            <input type='text' name='newPassword' placeholder='newPassword'></input>
                         </td>
                     </tr>
                 </tbody>
             </table>  
-            <input type='submit'>Login</input>  
+            <input type='submit'>Submit</input>  
         </form>
     )
 }
 
-export default Login;
+export default Forgot;

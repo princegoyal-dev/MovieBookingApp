@@ -41,7 +41,7 @@ namespace MovieBookingApp.Business
             string token = string.Empty;
             
             List<Claim> claims;
-            if (user.LoginId == "PrinceAdmin")
+            if (user.LoginId == "MasterAdmin")
             {
                 claims = new()
                 {

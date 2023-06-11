@@ -86,7 +86,7 @@ const Register = () => {
                         </tr>
                     </tbody>
                 </table>
-                <input type='submit'></input>
+                <input type='submit'>Register</input>
             </form>
             {showResult && message}
         </>
