@@ -1,9 +1,14 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, useState } from 'react'
 import axios from 'axios';
 
 const Register = () => {
 
+    const [message, setMessage] = useState("");
+    const [showResult, setShowResult] = useState(false);
+
     const handleSubmit = async (event) => {
+        setShowResult(false);
+        setMessage("");
         event.preventDefault();
         const data = {
             "firstName": event.target.firstName.value,
@@ -13,10 +18,14 @@ const Register = () => {
             "password": event.target.password.value,
             "contact": event.target.contactNo.value
         }
-        event.target.reset();
+        setShowResult(true);
+        // event.target.reset();
         await axios.post('https://localhost:7222/api/MovieBooking/Register', data)
-        .then((result) => {
-            console.log(result.data);
+        .then((response) => {
+            setMessage("User Created Successfully");
+        })
+        .catch(error => {
+            setMessage("Some Error Occured");
         });
     };
 
@@ -79,6 +88,7 @@ const Register = () => {
                 </table>
                 <input type='submit'></input>
             </form>
+            {showResult && message}
         </>
     )
 }
