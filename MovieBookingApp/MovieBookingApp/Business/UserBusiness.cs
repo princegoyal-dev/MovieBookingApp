@@ -23,6 +23,10 @@ namespace MovieBookingApp.Business
 
         public async Task<string> AddUser(UserDto user)
         {
+            if(String.IsNullOrEmpty(user.LoginId) || String.IsNullOrEmpty(user.Email) || String.IsNullOrEmpty(user.FirstName) || String.IsNullOrEmpty(user.LastName) || String.IsNullOrEmpty(user.Password) || String.IsNullOrEmpty(user.Contact))
+            {
+                return "";
+            }
             string userId = string.Empty;
 
             try

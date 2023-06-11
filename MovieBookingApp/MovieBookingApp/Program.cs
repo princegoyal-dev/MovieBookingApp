@@ -35,11 +35,22 @@ builder.Services.AddSwaggerGen(options =>
 });
 //builder.Services.AddSwaggerGen();
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(name: "corspolicy",
+                      policy =>
+                      {
+                          policy.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
+                      });
+});
+
 
 ConfigureAppsettings();
 DependencyInjection();
 
 var app = builder.Build();
+
+app.UseCors("corspolicy");
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
@@ -57,6 +68,7 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
+
 
 void ConfigureAppsettings()
 {

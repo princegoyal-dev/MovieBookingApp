@@ -165,3 +165,9 @@ C:\Users\User 2GB\Downloads\MovieBookingApp\MovieBookingApp\MovieBookingApp\obj\
 C:\Users\User 2GB\Downloads\MovieBookingApp\MovieBookingApp\MovieBookingApp\obj\Debug\net6.0\MovieBookingApp.pdb
 C:\Users\User 2GB\Downloads\MovieBookingApp\MovieBookingApp\MovieBookingApp\obj\Debug\net6.0\MovieBookingApp.genruntimeconfig.cache
 C:\Users\User 2GB\Downloads\MovieBookingApp\MovieBookingApp\MovieBookingApp\obj\Debug\net6.0\ref\MovieBookingApp.dll
+C:\Users\User 2GB\Downloads\MovieBookingApp\MovieBookingApp\MovieBookingApp\bin\Debug\net6.0\System.Web.Cors.dll
+C:\Users\User 2GB\Downloads\MovieBookingApp\MovieBookingApp\MovieBookingApp\bin\Debug\net6.0\System.Net.Http.Formatting.dll
+C:\Users\User 2GB\Downloads\MovieBookingApp\MovieBookingApp\MovieBookingApp\bin\Debug\net6.0\System.Web.Http.dll
+C:\Users\User 2GB\Downloads\MovieBookingApp\MovieBookingApp\MovieBookingApp\bin\Debug\net6.0\System.Web.Http.Cors.dll
+C:\Users\User 2GB\Downloads\MovieBookingApp\MovieBookingApp\MovieBookingApp\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\User 2GB\Downloads\MovieBookingApp\MovieBookingApp\MovieBookingApp\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll
