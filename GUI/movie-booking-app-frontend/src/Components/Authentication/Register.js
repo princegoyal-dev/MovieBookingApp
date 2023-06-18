@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from 'react'
+import React, { useState } from 'react'
 import axios from 'axios';
 
 const Register = () => {
@@ -86,7 +86,7 @@ const Register = () => {
                         </tr>
                     </tbody>
                 </table>
-                <input type='submit'>Register</input>
+                <input type='submit' value='Register'></input>
             </form>
             {showResult && message}
         </>
