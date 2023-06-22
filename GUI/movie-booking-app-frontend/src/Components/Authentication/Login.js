@@ -77,6 +77,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import useStore from "../../StateStorage";
+import image from "../Images/Login.png";
 
 const Login = () => {
   const [message, setMessage] = useState("");
@@ -125,8 +126,8 @@ const Login = () => {
     alignItems: "center",
     justifyContent: "center",
     height: "100vh",
-    backgroundImage:
-      "url('https://img.freepik.com/free-photo/videotape-with-3d-glasses-cinema-menu_23-2148133565.jpg?w=996&t=st=1687374016~exp=1687374616~hmac=1b4527361db7855b0832211ade1733898220955d3489e2876cbe8fa9a15cfeb1')",
+    backgroundImage: `url(${image})`,
+    //   "url('https://img.freepik.com/free-photo/videotape-with-3d-glasses-cinema-menu_23-2148133565.jpg?w=996&t=st=1687374016~exp=1687374616~hmac=1b4527361db7855b0832211ade1733898220955d3489e2876cbe8fa9a15cfeb1')",
     backgroundSize: "cover",
     backgroundPosition: "center",
     backgroundRepeat: "no-repeat",
