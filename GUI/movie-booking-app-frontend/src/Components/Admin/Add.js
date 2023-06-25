@@ -1,16 +1,22 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios, { all } from "axios";
 import useStore from "../../StateStorage";
 import image from "../Images/Add.png";
+import { useNavigate } from "react-router-dom";
 
 const Add = () => {
+  let navigate = useNavigate();
   const [message, setMessage] = useState("");
   const [showResult, setShowResult] = useState(false);
-
-  const { storedJwtToken } = useStore((state) => ({
+  const {storedUsername, storedJwtToken } = useStore((state) => ({
+    storedUsername: state.loginId,
     storedJwtToken: state.jwtToken,
   }));
-
+  useEffect(() => {
+    if (storedUsername == "") {
+      navigate('/Login');
+    }
+  });
   const handleSubmit = async (event) => {
     setShowResult(false);
     setMessage("");
@@ -36,6 +42,10 @@ const Add = () => {
         setMessage("Some Error Occured");
       });
   };
+  
+  const homeClicked = () => {
+    navigate('/Home');
+  }
 
   const containerStyle = {
     display: "flex",
@@ -166,6 +176,9 @@ const Add = () => {
           </table>
           <input type="submit" value="Add Movie" style={buttonStyle} />
         </form>
+        <button onClick={homeClicked} type="button" value="homeButton">
+            Home
+        </button>
         {showResult && <p style={messageStyle}>{message}</p>}
       </div>
     </>

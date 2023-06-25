@@ -1,10 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import useStore from "../../StateStorage";
-import image from "../Images/Login.png";
+import image from "../Images/login.png";
 import Forgot from "./Forgot";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
+  let navigate = useNavigate();
   const [message, setMessage] = useState("");
   const [showResult, setShowResult] = useState(false);
 
@@ -13,13 +15,12 @@ const Login = () => {
     addValues: state.addValues,
   }));
 
-  // useEffect(() => {
-  //     // console.log("LoginPage: " + storedUsername);
-  //     if(storedUsername != "") {
-  //         navigate('/Home')
-  //     }
-  // });
-
+  useEffect(() => {
+    if (storedUsername != "") {
+        navigate('/Home');
+    }
+  });
+  
   const handleSubmit = async (event) => {
     setShowResult(false);
     setMessage("");
@@ -45,6 +46,7 @@ const Login = () => {
         setMessage("Login Failed");
       });
   };
+
   const containerStyle = {
     display: "flex",
     flexDirection: "column",
@@ -135,6 +137,14 @@ const Login = () => {
     textAlign: "center",
   };
 
+  const changePasswordClicked = () => {
+    navigate('/Change');
+  }
+
+  const registerClicked = () => {
+    navigate('/Register');
+  }
+
   return (
     <>
       <div style={containerStyle}>
@@ -155,13 +165,13 @@ const Login = () => {
           <button style={buttonStyle} type="submit" value="Login">
             Login
           </button>
-          <a style={forgotPassword} href={Forgot}>
+        </form>
+          <a style={forgotPassword} onClick={changePasswordClicked}>
             Forgotten password?
           </a>
-          <button style={RegisterNow} type="submit" value="Register">
+          <button  onClick={registerClicked} style={RegisterNow} value="Register">
             Create New Account
           </button>
-        </form>
         {showResult && <p style={messageStyle}>{message}</p>}
         <p style={footerStyle}>
           © 2023 Movie Booking App. All rights reserved.

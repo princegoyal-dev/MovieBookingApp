@@ -1,15 +1,22 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import useStore from "../../StateStorage";
 import image from "../Images/Book.png";
+import { useNavigate } from "react-router-dom";
 
 const BookTicket = () => {
+  let navigate = useNavigate();
   const [message, setMessage] = useState("");
   const [showResult, setShowResult] = useState(false);
-
-  const { storedJwtToken } = useStore((state) => ({
+  const {storedUsername, storedJwtToken } = useStore((state) => ({
+    storedUsername: state.loginId,
     storedJwtToken: state.jwtToken,
   }));
+  useEffect(() => {
+    if (storedUsername == "") {
+      navigate('/Login');
+    }
+  });
 
   const handleSubmit = async (event) => {
     setShowResult(false);
@@ -36,6 +43,10 @@ const BookTicket = () => {
         setMessage("Ticket Booking Failed");
       });
   };
+  
+  const homeClicked = () => {
+    navigate('/Home');
+  }
 
   const containerStyle = {
     display: "flex",
@@ -129,6 +140,9 @@ const BookTicket = () => {
             Book Ticket
           </button>
         </form>
+        <button onClick={homeClicked} type="button" value="homeButton">
+            Home
+        </button>
         {showResult && <p style={messageStyle}>{message}</p>}
       </div>
     </>

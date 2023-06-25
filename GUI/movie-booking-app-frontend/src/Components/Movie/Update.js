@@ -1,11 +1,23 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment, useState, useEffect} from "react";
 import axios from "axios";
 import useStore from "../../StateStorage";
 import image from "../Images/Update.png";
+import { useNavigate } from "react-router-dom";
 
 const Update = () => {
+  let navigate = useNavigate();
   const [message, setMessage] = useState("");
   const [showResult, setShowResult] = useState(false);
+
+  const {storedUsername, storedJwtToken } = useStore((state) => ({
+    storedUsername: state.loginId,
+    storedJwtToken: state.jwtToken,
+  }));
+  useEffect(() => {
+    if (storedUsername == "") {
+      navigate('/Login');
+    }
+  });
 
   const handleSubmit = async (event) => {
     setShowResult(false);
@@ -29,6 +41,10 @@ const Update = () => {
         setMessage("Ticket Updation failed");
       });
   };
+  
+  const homeClicked = () => {
+    navigate('/Home');
+  }
 
   const containerStyle = {
     display: "flex",
@@ -166,6 +182,9 @@ const Update = () => {
           </table>
           <input style={buttonStyle} type="submit" value="Submit" />
         </form>
+        <button onClick={homeClicked} type="button" value="homeButton">
+            Home
+        </button>
         {showResult && <p style={messageStyle}>{message}</p>}
       </div>
     </>

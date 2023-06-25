@@ -1,22 +1,30 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment, useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import useStore from "../../StateStorage";
 import image from "../Images/Forgot.png";
 
 const Forgot = () => {
+  let navigate = useNavigate();
   const [message, setMessage] = useState("");
   const [showResult, setShowResult] = useState(false);
 
-  const { storedJwtToken } = useStore((state) => ({
+  const {storedUsername, storedJwtToken } = useStore((state) => ({
+    storedUsername: state.loginId,
     storedJwtToken: state.jwtToken,
   }));
+  useEffect(() => {
+    if (storedUsername == "") {
+      navigate('/Login');
+    }
+  });
 
   const handleSubmit = async (event) => {
     setShowResult(false);
     setMessage("");
     event.preventDefault();
     const data = {
-      loginId: event.target.loginId.value,
+      loginId: storedUsername,
       newPassword: event.target.newPassword.value,
     };
     setShowResult(true);
@@ -24,9 +32,9 @@ const Forgot = () => {
     await axios
       .get(
         "https://localhost:7222/api/MovieBooking/" +
-          data["loginId"] +
-          "/Forgot?newPassword=" +
-          data["newPassword"],
+        data["loginId"] +
+        "/Forgot?newPassword=" +
+        data["newPassword"],
         {
           headers: {
             Authorization: "Bearer " + storedJwtToken,
@@ -101,18 +109,22 @@ const Forgot = () => {
     fontWeight: "bold",
     color: "#4caf50",
   };
+  
+  const homeClicked = () => {
+    navigate('/Home');
+  }
 
   return (
     <>
       <div style={containerStyle}>
         <form style={formStyle} onSubmit={handleSubmit}>
           <h1 style={titleStyle}>Forgot Password</h1>
-          <input
+          {/* <input
             style={inputStyle}
             type="text"
             name="loginId"
             placeholder="loginId"
-          />
+          /> */}
           <input
             style={inputStyle}
             type="password"
@@ -123,6 +135,9 @@ const Forgot = () => {
             Reset Password
           </button>
         </form>
+        <button onClick={homeClicked} type="button" value="homeButton">
+            Home
+        </button>
         {showResult && <p style={messageStyle}>{message}</p>}
       </div>
     </>

@@ -1,10 +1,22 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import image from "../Images/Register.png"
+import { useNavigate } from "react-router-dom";
+import useStore from "../../StateStorage";
 
 const Register = () => {
+  let navigate = useNavigate();
   const [message, setMessage] = useState("");
   const [showResult, setShowResult] = useState(false);
+  const {storedUsername, storedJwtToken } = useStore((state) => ({
+    storedUsername: state.loginId,
+    storedJwtToken: state.jwtToken,
+  }));
+  useEffect(() => {
+    if (storedUsername != "") {
+      navigate('/Home');
+    }
+  });
 
   const handleSubmit = async (event) => {
     setShowResult(false);
@@ -29,6 +41,10 @@ const Register = () => {
         setMessage("Some Error Occured");
       });
   };
+  const homeClicked = () => {
+    navigate('/Home');
+  }
+
 
   const containerStyle = {
     display: "flex",
@@ -140,6 +156,9 @@ const Register = () => {
             Register
           </button>
         </form>
+        <button onClick={homeClicked} type="button" value="homeButton">
+            Home
+        </button>
         {showResult && <p style={messageStyle}>{message}</p>}
       </div>
     </>

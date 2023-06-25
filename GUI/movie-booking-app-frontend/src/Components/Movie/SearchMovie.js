@@ -1,17 +1,25 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import useStore from "../../StateStorage";
 import image from "../Images/Search.png";
+import { useNavigate } from "react-router-dom";
 
 const SearchMovie = () => {
+  let navigate = useNavigate();
   const [message, setMessage] = useState([]);
   const [showResult, setShowResult] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
   const [showError, setShowError] = useState(false);
 
-  const { storedJwtToken } = useStore((state) => ({
+  const {storedUsername, storedJwtToken } = useStore((state) => ({
+    storedUsername: state.loginId,
     storedJwtToken: state.jwtToken,
   }));
+  useEffect(() => {
+    if (storedUsername == "") {
+      navigate('/Login');
+    }
+  });
 
   const handleSubmit = async (event) => {
     setShowResult(false);
@@ -45,6 +53,10 @@ const SearchMovie = () => {
         setShowError(true);
       });
   };
+  
+  const homeClicked = () => {
+    navigate('/Home');
+  }
 
   const containerStyle = {
     display: "flex",
@@ -130,6 +142,9 @@ const SearchMovie = () => {
             Search
           </button>
         </form>
+        <button onClick={homeClicked} type="button" value="homeButton">
+            Home
+        </button>
         {showResult && (
           <div>
             {message.map((e) => (
