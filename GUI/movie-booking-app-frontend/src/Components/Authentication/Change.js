@@ -1,75 +1,6 @@
-// import React, { Fragment, useState } from 'react'
-// import axios from 'axios';
-
-// const Change = () => {
-
-//     const [message, setMessage] = useState("");
-//     const [showResult, setShowResult] = useState(false);
-
-//     const handleSubmit = async (event) => {
-//         setShowResult(false);
-//         setMessage("");
-//         event.preventDefault();
-//         const data = {
-//             "loginId": event.target.loginId.value,
-//             "oldPassword": event.target.oldPassword.value,
-//             "newPassword": event.target.newPassword.value,
-//         }
-//         setShowResult(true);
-//         // event.target.reset();
-//         await axios.get('https://localhost:7222/api/MovieBooking/' + data["loginId"] + '/changePassword?oldPassword=' + data["oldPassword"] + '&newPassword=' + data["newPassword"])
-//             .then((response) => {
-//                 setMessage("Password changed successfully");
-//             })
-//             .catch(error => {
-//                 setMessage("Some Error Occured");
-//             });
-//     };
-
-//     return (
-//         <>
-//             <form onSubmit={handleSubmit}>
-//                 <h1>Change Password</h1>
-//                 <br />
-//                 <table>
-//                     <tbody>
-//                         <tr>
-//                             <td>
-//                                 <label>loginId</label>
-//                             </td>
-//                             <td>
-//                                 <input type='text' name='loginId' placeholder='loginId'></input>
-//                             </td>
-//                         </tr>
-//                         <tr>
-//                             <td>
-//                                 <label>oldPassword</label>
-//                             </td>
-//                             <td>
-//                                 <input type='password' name='oldPassword' placeholder='oldPassword'></input>
-//                             </td>
-//                         </tr>
-//                         <tr>
-//                             <td>
-//                                 <label>newPassword</label>
-//                             </td>
-//                             <td>
-//                                 <input type='password' name='newPassword' placeholder='newPassword'></input>
-//                             </td>
-//                         </tr>
-//                     </tbody>
-//                 </table>
-//                 <input type='submit'></input>
-//             </form>
-//             {showResult && message}
-//         </>
-//     )
-// }
-
-// export default Change;
-
 import React, { Fragment, useState } from "react";
 import axios from "axios";
+import image from "../Images/Change.png";
 
 const Change = () => {
   const [message, setMessage] = useState("");
@@ -109,7 +40,7 @@ const Change = () => {
     alignItems: "center",
     justifyContent: "center",
     height: "100vh",
-    backgroundImage: "url('background-image.jpg')",
+    backgroundImage: `url(${image})`,
     backgroundSize: "cover",
     backgroundPosition: "center",
     backgroundRepeat: "no-repeat",
@@ -121,36 +52,38 @@ const Change = () => {
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
-    backgroundColor: "rgba(255, 255, 255, 0.8)",
+    backgroundColor: "rgba(255, 255, 255, 0.6)",
     padding: "40px",
-    borderRadius: "5px",
-    boxShadow: "0 2px 4px rgba(0, 0, 0, 0.2)",
+    // marginBottom: "12vh",
+    // marginRight: "0vh",
+    borderRadius: "30px",
+    boxShadow: "0 2px 4px rgba(0, 0, 0, 1)",
   };
 
   const titleStyle = {
     marginBottom: "20px",
-    fontSize: "24px",
+    fontSize: "29px",
     fontWeight: "bold",
     color: "#333",
   };
 
   const inputStyle = {
     padding: "10px",
-    borderRadius: "3px",
+    borderRadius: "25px",
     border: "1px solid #ccc",
     width: "300px",
     marginBottom: "20px",
-    fontSize: "14px",
+    fontSize: "15px",
   };
 
   const buttonStyle = {
-    padding: "10px 20px",
+    padding: "10px 30px",
     backgroundColor: "#4caf50",
     color: "white",
     border: "none",
-    borderRadius: "3px",
+    borderRadius: "25px",
     cursor: "pointer",
-    fontSize: "14px",
+    fontSize: "15px",
     fontWeight: "bold",
     transition: "background-color 0.3s",
   };

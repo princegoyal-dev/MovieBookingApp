@@ -1,91 +1,7 @@
-// import React, { useState } from 'react'
-// import axios from 'axios';
-// import useStore from '../../StateStorage';
-
-// const SearchMovie = () => {
-
-//     const [message, setMessage] = useState([]);
-//     const [showResult, setShowResult] = useState(false);
-//     const [errorMessage, setErrorMessage] = useState("");
-//     const [showError, setShowError] = useState(false);
-
-//     const { storedJwtToken } = useStore(
-//         (state) => ({
-//             storedJwtToken: state.jwtToken
-//         })
-//     )
-
-//     const handleSubmit = async (event) => {
-//         setShowResult(false);
-//         setShowError(false);
-//         setMessage("");
-//         event.preventDefault();
-//         const data = {
-//             "movieName": event.target.movieName.value,
-//         }
-
-//         // event.target.reset();
-//         await axios.get('https://localhost:7222/api/MovieBooking/Movies/Search/MovieName?movieName=' + data["movieName"],
-//             {
-//                 headers: {
-//                     'Authorization': 'Bearer ' + storedJwtToken,
-//                 }
-//             })
-//             .then((response) => {
-//                 for (let data in response.data) {
-//                     message.push(response.data[data]);
-//                 }
-//                 console.log(message);
-//                 setShowResult(true);
-//             })
-//             .catch(error => {
-//                 setErrorMessage("No Such Movies Found");
-//                 setShowError(true);
-//             });
-//     };
-
-//     return (
-//         <>
-//             <form onSubmit={handleSubmit}>
-//                 <h1>Search Movies</h1>
-//                 <br />
-//                 <table>
-//                     <tbody>
-//                         <tr>
-//                             <td>
-//                                 <label>Movie Name</label>
-//                             </td>
-//                             <td>
-//                                 <input type='text' name='movieName' placeholder='movieName'></input>
-//                             </td>
-//                         </tr>
-//                     </tbody>
-//                 </table>
-//                 <input type='submit' value='Search'></input>
-//             </form>
-//             {/* {(showResult == true) &&
-//                 <div>
-//                     {
-//                         message.map(e => {
-//                             <div>
-//                                 {e.name}
-//                                 {e.theatreName}
-//                                 {e.isAvailable}
-//                             </div>
-//                         })}
-//                 </div>
-//             } */}
-//             {showError == true && errorMessage}
-//         </>
-//     )
-// }
-
-// export default SearchMovie;
-
-
 import React, { useState } from "react";
 import axios from "axios";
 import useStore from "../../StateStorage";
+import image from "../Images/Search.png";
 
 const SearchMovie = () => {
   const [message, setMessage] = useState([]);
@@ -136,6 +52,10 @@ const SearchMovie = () => {
     alignItems: "center",
     justifyContent: "center",
     height: "100vh",
+    backgroundImage: `url(${image})`,
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    backgroundRepeat: "no-repeat",
     padding: "20px",
     fontFamily: "Arial, sans-serif",
   };
@@ -146,8 +66,10 @@ const SearchMovie = () => {
     alignItems: "center",
     backgroundColor: "rgba(255, 255, 255, 0.8)",
     padding: "40px",
-    borderRadius: "5px",
-    boxShadow: "0 2px 4px rgba(0, 0, 0, 0.2)",
+    marginLeft: "120vh",
+    marginTop: "15vh",
+    borderRadius: "30px",
+    boxShadow: "1 2px 4px rgba(0, 0, 0, 1)",
   };
 
   const titleStyle = {
@@ -159,7 +81,7 @@ const SearchMovie = () => {
 
   const inputStyle = {
     padding: "10px",
-    borderRadius: "3px",
+    borderRadius: "25px",
     border: "1px solid #ccc",
     width: "300px",
     marginBottom: "20px",
@@ -167,13 +89,13 @@ const SearchMovie = () => {
   };
 
   const buttonStyle = {
-    padding: "10px 20px",
+    padding: "10px 40px",
     backgroundColor: "#4caf50",
     color: "white",
     border: "none",
-    borderRadius: "3px",
+    borderRadius: "25px",
     cursor: "pointer",
-    fontSize: "14px",
+    fontSize: "16px",
     fontWeight: "bold",
     transition: "background-color 0.3s",
   };
@@ -187,6 +109,7 @@ const SearchMovie = () => {
 
   const errorStyle = {
     marginTop: "20px",
+    marginLeft: "54vw",
     fontSize: "18px",
     fontWeight: "bold",
     color: "red",
