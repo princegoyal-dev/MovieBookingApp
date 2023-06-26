@@ -4,18 +4,22 @@ import axios from "axios";
 import useStore from "../../StateStorage";
 import image from "../Images/Forgot.png";
 
+// Import Font Awesome icons
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUnlockAlt, faHome } from "@fortawesome/free-solid-svg-icons";
+
 const Forgot = () => {
   let navigate = useNavigate();
   const [message, setMessage] = useState("");
   const [showResult, setShowResult] = useState(false);
 
-  const {storedUsername, storedJwtToken } = useStore((state) => ({
+  const { storedUsername, storedJwtToken } = useStore((state) => ({
     storedUsername: state.loginId,
     storedJwtToken: state.jwtToken,
   }));
   useEffect(() => {
     if (storedUsername == "") {
-      navigate('/Login');
+      navigate("/Login");
     }
   });
 
@@ -32,9 +36,9 @@ const Forgot = () => {
     await axios
       .get(
         "https://localhost:7222/api/MovieBooking/" +
-        data["loginId"] +
-        "/Forgot?newPassword=" +
-        data["newPassword"],
+          data["loginId"] +
+          "/Forgot?newPassword=" +
+          data["newPassword"],
         {
           headers: {
             Authorization: "Bearer " + storedJwtToken,
@@ -102,6 +106,18 @@ const Forgot = () => {
     transition: "background-color 0.3s",
   };
 
+  const homeStyle = {
+    padding: "5px 20px",
+    backgroundColor: "#1877f2",
+    color: "white",
+    border: "2px wavy black",
+    borderRadius: "25px",
+    cursor: "pointer",
+    fontSize: "14px",
+    fontWeight: "bold",
+    marginTop: "2vh",
+  };
+
   const messageStyle = {
     marginTop: "6vh",
     marginLeft: "48vw",
@@ -109,35 +125,39 @@ const Forgot = () => {
     fontWeight: "bold",
     color: "#4caf50",
   };
-  
+
   const homeClicked = () => {
-    navigate('/Home');
-  }
+    navigate("/Home");
+  };
 
   return (
     <>
       <div style={containerStyle}>
         <form style={formStyle} onSubmit={handleSubmit}>
-          <h1 style={titleStyle}>Forgot Password</h1>
-          {/* <input
-            style={inputStyle}
-            type="text"
-            name="loginId"
-            placeholder="loginId"
-          /> */}
+          <h1 style={titleStyle}>
+            <FontAwesomeIcon icon={faUnlockAlt} style={{ marginRight: "10px" }} />
+            Forgot Password
+          </h1>
           <input
             style={inputStyle}
             type="password"
             name="newPassword"
-            placeholder="newPassword"
+            placeholder="New Password"
           />
           <button style={buttonStyle} type="submit">
+          <FontAwesomeIcon icon={faUnlockAlt} style={{ marginRight: "10px" }} />
             Reset Password
           </button>
-        </form>
-        <button onClick={homeClicked} type="button" value="homeButton">
+          <button
+            onClick={homeClicked}
+            style={homeStyle}
+            type="button"
+            value="homeButton"
+          >
+            <FontAwesomeIcon icon={faHome} style={{ marginRight: "5px" }} />
             Home
-        </button>
+          </button>
+        </form>
         {showResult && <p style={messageStyle}>{message}</p>}
       </div>
     </>

@@ -1,20 +1,24 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import useStore from "../../StateStorage";
-import image from "../Images/Book.png";
+import image from "../Images/BookTicket.png";
 import { useNavigate } from "react-router-dom";
+
+// Import Font Awesome icons
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHome, faTicketAlt } from "@fortawesome/free-solid-svg-icons";
 
 const BookTicket = () => {
   let navigate = useNavigate();
   const [message, setMessage] = useState("");
   const [showResult, setShowResult] = useState(false);
-  const {storedUsername, storedJwtToken } = useStore((state) => ({
+  const { storedUsername, storedJwtToken } = useStore((state) => ({
     storedUsername: state.loginId,
     storedJwtToken: state.jwtToken,
   }));
   useEffect(() => {
-    if (storedUsername == "") {
-      navigate('/Login');
+    if (storedUsername === "") {
+      navigate("/Login");
     }
   });
 
@@ -43,11 +47,12 @@ const BookTicket = () => {
         setMessage("Ticket Booking Failed");
       });
   };
-  
-  const homeClicked = () => {
-    navigate('/Home');
-  }
 
+  const homeClicked = () => {
+    navigate("/Home");
+  };
+
+  // CSS styles
   const containerStyle = {
     display: "flex",
     flexDirection: "column",
@@ -100,6 +105,18 @@ const BookTicket = () => {
     transition: "background-color 0.3s",
   };
 
+  const homeStyle = {
+    padding: "5px 15px",
+    backgroundColor: "#1877f2",
+    color: "white",
+    border: "2px wavy black",
+    borderRadius: "25px",
+    cursor: "pointer",
+    fontSize: "14px",
+    fontWeight: "bold",
+    marginTop: "2vh",
+  };
+
   const messageStyle = {
     marginTop: "20px",
     fontSize: "18px",
@@ -111,7 +128,13 @@ const BookTicket = () => {
     <>
       <div style={containerStyle}>
         <form style={formStyle} onSubmit={handleSubmit}>
-          <h1 style={titleStyle}>Book Tickets</h1>
+          <h1 style={titleStyle}>
+            <FontAwesomeIcon
+              icon={faTicketAlt}
+              style={{ marginRight: "10px" }}
+            />
+            Book Tickets
+          </h1>
           <input
             style={inputStyle}
             type="text"
@@ -137,12 +160,16 @@ const BookTicket = () => {
             placeholder="Seat Number"
           />
           <button style={buttonStyle} type="submit">
+          <FontAwesomeIcon
+              icon={faTicketAlt}
+              style={{ marginRight: "10px" }}
+            />
             Book Ticket
           </button>
+          <button onClick={homeClicked} style={homeStyle} type="button">
+            <FontAwesomeIcon icon={faHome} />
+          </button>
         </form>
-        <button onClick={homeClicked} type="button" value="homeButton">
-            Home
-        </button>
         {showResult && <p style={messageStyle}>{message}</p>}
       </div>
     </>

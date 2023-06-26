@@ -1,9 +1,13 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import useStore from "../../StateStorage";
-import image from "../Images/login.png";
+import image from "../Images/Login.png";
 import Forgot from "./Forgot";
 import { useNavigate } from "react-router-dom";
+
+// Import Font Awesome icons
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faKey, faUser, faQuestionCircle, faUserPlus } from "@fortawesome/free-solid-svg-icons";
 
 const Login = () => {
   let navigate = useNavigate();
@@ -17,10 +21,10 @@ const Login = () => {
 
   useEffect(() => {
     if (storedUsername != "") {
-        navigate('/Home');
+      navigate("/Home");
     }
   });
-  
+
   const handleSubmit = async (event) => {
     setShowResult(false);
     setMessage("");
@@ -54,7 +58,6 @@ const Login = () => {
     justifyContent: "center",
     height: "100vh",
     backgroundImage: `url(${image})`,
-    //   "url('https://img.freepik.com/free-photo/videotape-with-3d-glasses-cinema-menu_23-2148133565.jpg?w=996&t=st=1687374016~exp=1687374616~hmac=1b4527361db7855b0832211ade1733898220955d3489e2876cbe8fa9a15cfeb1')",
     backgroundSize: "cover",
     backgroundPosition: "center",
     backgroundRepeat: "no-repeat",
@@ -91,7 +94,7 @@ const Login = () => {
   };
 
   const buttonStyle = {
-    padding: "11px 50px",
+    padding: "11px 38px",
     backgroundColor: "#1877f2",
     color: "white",
     border: "none",
@@ -105,9 +108,11 @@ const Login = () => {
   const forgotPassword = {
     marginTop: "2vh",
     cursor: "pointer",
+    textDecoration: "underline",
+    color: "#1877f2",
   };
 
-  const RegisterNow = {
+  const registerNow = {
     marginTop: "3vh",
     marginLeft: "1vw",
     padding: "15px 40px",
@@ -138,18 +143,21 @@ const Login = () => {
   };
 
   const changePasswordClicked = () => {
-    navigate('/Change');
-  }
+    navigate("/Change");
+  };
 
   const registerClicked = () => {
-    navigate('/Register');
-  }
+    navigate("/Register");
+  };
 
   return (
     <>
       <div style={containerStyle}>
         <form style={formStyle} onSubmit={handleSubmit}>
-          <h1 style={titleStyle}>Login</h1>
+          <h1 style={titleStyle}>
+            
+            Login
+          </h1>
           <input
             style={inputStyle}
             type="text"
@@ -163,15 +171,22 @@ const Login = () => {
             placeholder="Password"
           />
           <button style={buttonStyle} type="submit" value="Login">
+          <FontAwesomeIcon icon={faKey} style={{ marginRight: "7px" }} />
             Login
           </button>
-        </form>
           <a style={forgotPassword} onClick={changePasswordClicked}>
+            <FontAwesomeIcon icon={faQuestionCircle} style={{ marginRight: "5px" }} />
             Forgotten password?
           </a>
-          <button  onClick={registerClicked} style={RegisterNow} value="Register">
+          <button
+            onClick={registerClicked}
+            style={registerNow}
+            value="Register"
+          >
+            <FontAwesomeIcon icon={faUserPlus} style={{ marginRight: "5px" }} />
             Create New Account
           </button>
+        </form>
         {showResult && <p style={messageStyle}>{message}</p>}
         <p style={footerStyle}>
           © 2023 Movie Booking App. All rights reserved.

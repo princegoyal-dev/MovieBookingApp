@@ -4,21 +4,24 @@ import image from "../Images/Change.png";
 import { useNavigate } from "react-router-dom";
 import useStore from "../../StateStorage";
 
+// Import Font Awesome icons
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faLock, faHome } from "@fortawesome/free-solid-svg-icons";
+
 const Change = () => {
   let navigate = useNavigate();
   const [message, setMessage] = useState("");
   const [showResult, setShowResult] = useState(false);
 
-  const {storedUsername, storedJwtToken } = useStore((state) => ({
+  const { storedUsername, storedJwtToken } = useStore((state) => ({
     storedUsername: state.loginId,
     storedJwtToken: state.jwtToken,
   }));
   useEffect(() => {
     if (storedUsername != "") {
-      navigate('/Home');
+      navigate("/Home");
     }
   });
-
 
   const handleSubmit = async (event) => {
     setShowResult(false);
@@ -44,12 +47,12 @@ const Change = () => {
         setMessage("Password changed successfully");
       })
       .catch((error) => {
-        setMessage("Some Error Occured");
+        setMessage("Some Error Occurred");
       });
   };
   const homeClicked = () => {
-    navigate('/Home');
-  }
+    navigate("/Home");
+  };
 
   const containerStyle = {
     display: "flex",
@@ -71,8 +74,6 @@ const Change = () => {
     alignItems: "center",
     backgroundColor: "rgba(255, 255, 255, 0.6)",
     padding: "40px",
-    // marginBottom: "12vh",
-    // marginRight: "0vh",
     borderRadius: "30px",
     boxShadow: "0 2px 4px rgba(0, 0, 0, 1)",
   };
@@ -105,8 +106,16 @@ const Change = () => {
     transition: "background-color 0.3s",
   };
 
-  const buttonHoverStyle = {
-    backgroundColor: "#45a049",
+  const homeStyle = {
+    padding: "5px 20px",
+    backgroundColor: "#1877f2",
+    color: "white",
+    border: "2px wavy black",
+    borderRadius: "25px",
+    cursor: "pointer",
+    fontSize: "14px",
+    fontWeight: "bold",
+    marginTop: "2vh",
   };
 
   const messageStyle = {
@@ -120,7 +129,10 @@ const Change = () => {
     <>
       <div style={containerStyle}>
         <form style={formStyle} onSubmit={handleSubmit}>
-          <h1 style={titleStyle}>Change Password</h1>
+          <h1 style={titleStyle}>
+            <FontAwesomeIcon icon={faLock} style={{ marginRight: "10px" }} />
+            Change Password
+          </h1>
           <input
             style={inputStyle}
             type="text"
@@ -140,12 +152,18 @@ const Change = () => {
             placeholder="newPassword"
           />
           <button style={buttonStyle} type="submit">
+          <FontAwesomeIcon icon={faLock} style={{ marginRight: "10px" }} />
             Change Password
           </button>
+          <button
+            onClick={homeClicked}
+            style={homeStyle}
+            type="button"
+            value="homeButton"
+          >
+            <FontAwesomeIcon icon={faHome} />
+          </button>
         </form>
-        <button onClick={homeClicked} type="button" value="homeButton">
-            Home
-        </button>
         {showResult && <p style={messageStyle}>{message}</p>}
       </div>
     </>

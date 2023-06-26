@@ -1,21 +1,25 @@
-import React, { Fragment, useState, useEffect} from "react";
+import React, { Fragment, useState, useEffect } from "react";
 import axios from "axios";
 import useStore from "../../StateStorage";
 import image from "../Images/Update.png";
 import { useNavigate } from "react-router-dom";
+
+// Import Font Awesome icons
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEdit, faHome } from "@fortawesome/free-solid-svg-icons";
 
 const Update = () => {
   let navigate = useNavigate();
   const [message, setMessage] = useState("");
   const [showResult, setShowResult] = useState(false);
 
-  const {storedUsername, storedJwtToken } = useStore((state) => ({
+  const { storedUsername, storedJwtToken } = useStore((state) => ({
     storedUsername: state.loginId,
     storedJwtToken: state.jwtToken,
   }));
   useEffect(() => {
     if (storedUsername == "") {
-      navigate('/Login');
+      navigate("/Login");
     }
   });
 
@@ -35,16 +39,16 @@ const Update = () => {
     await axios
       .post("https://localhost:7222/api/MovieBooking/ticket/update", data)
       .then((response) => {
-        setMessage("Ticket Updation Sucessful");
+        setMessage("Ticket Updation Successful");
       })
       .catch((error) => {
-        setMessage("Ticket Updation failed");
+        setMessage("Ticket Updation Failed");
       });
   };
-  
+
   const homeClicked = () => {
-    navigate('/Home');
-  }
+    navigate("/Home");
+  };
 
   const containerStyle = {
     display: "flex",
@@ -99,6 +103,18 @@ const Update = () => {
     transition: "background-color 0.3s",
   };
 
+  const homeStyle = {
+    padding: "5px 20px",
+    backgroundColor: "#1877f2",
+    color: "white",
+    border: "2px wavy black",
+    borderRadius: "25px",
+    cursor: "pointer",
+    fontSize: "14px",
+    fontWeight: "bold",
+    marginTop: "2vh",
+  };
+
   const messageStyle = {
     marginTop: "20px",
     fontSize: "18px",
@@ -110,7 +126,10 @@ const Update = () => {
     <>
       <div style={containerStyle}>
         <form style={formStyle} onSubmit={handleSubmit}>
-          <h1 style={titleStyle}>Update Ticket</h1>
+          <h1 style={titleStyle}>
+            <FontAwesomeIcon icon={faEdit} style={{ marginRight: "10px" }} />
+            Update Ticket
+          </h1>
           <table>
             <tbody>
               <tr>
@@ -181,10 +200,15 @@ const Update = () => {
             </tbody>
           </table>
           <input style={buttonStyle} type="submit" value="Submit" />
+          <button
+            onClick={homeClicked}
+            style={homeStyle}
+            type="button"
+            value="homeButton"
+          >
+            <FontAwesomeIcon icon={faHome} />
+          </button>
         </form>
-        <button onClick={homeClicked} type="button" value="homeButton">
-            Home
-        </button>
         {showResult && <p style={messageStyle}>{message}</p>}
       </div>
     </>

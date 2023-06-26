@@ -1,8 +1,12 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import useStore from "../../StateStorage";
-import image from "../Images/Search.png";
+import image from "../Images/SearchMovie.png";
 import { useNavigate } from "react-router-dom";
+
+// Import Font Awesome icons
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHome, faSearch } from "@fortawesome/free-solid-svg-icons";
 
 const SearchMovie = () => {
   let navigate = useNavigate();
@@ -11,13 +15,13 @@ const SearchMovie = () => {
   const [errorMessage, setErrorMessage] = useState("");
   const [showError, setShowError] = useState(false);
 
-  const {storedUsername, storedJwtToken } = useStore((state) => ({
+  const { storedUsername, storedJwtToken } = useStore((state) => ({
     storedUsername: state.loginId,
     storedJwtToken: state.jwtToken,
   }));
   useEffect(() => {
-    if (storedUsername == "") {
-      navigate('/Login');
+    if (storedUsername === "") {
+      navigate("/Login");
     }
   });
 
@@ -53,11 +57,12 @@ const SearchMovie = () => {
         setShowError(true);
       });
   };
-  
-  const homeClicked = () => {
-    navigate('/Home');
-  }
 
+  const homeClicked = () => {
+    navigate("/Home");
+  };
+
+  // CSS styles
   const containerStyle = {
     display: "flex",
     flexDirection: "column",
@@ -101,6 +106,9 @@ const SearchMovie = () => {
   };
 
   const buttonStyle = {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
     padding: "10px 40px",
     backgroundColor: "#4caf50",
     color: "white",
@@ -110,6 +118,25 @@ const SearchMovie = () => {
     fontSize: "16px",
     fontWeight: "bold",
     transition: "background-color 0.3s",
+  };
+
+  const homeStyle = {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    padding: "5px 20px",
+    backgroundColor: "#1877f2",
+    color: "white",
+    border: "2px wavy black",
+    borderRadius: "25px",
+    cursor: "pointer",
+    fontSize: "14px",
+    fontWeight: "bold",
+    marginTop: "2vh",
+  };
+
+  const iconStyle = {
+    marginRight: "5px",
   };
 
   const messageStyle = {
@@ -139,12 +166,19 @@ const SearchMovie = () => {
             placeholder="Movie Name"
           />
           <button style={buttonStyle} type="submit">
+            <FontAwesomeIcon icon={faSearch} style={iconStyle} />
             Search
           </button>
-        </form>
-        <button onClick={homeClicked} type="button" value="homeButton">
+          <button
+            onClick={homeClicked}
+            style={homeStyle}
+            type="button"
+            value="homeButton"
+          >
+            <FontAwesomeIcon icon={faHome} style={iconStyle} />
             Home
-        </button>
+          </button>
+        </form>
         {showResult && (
           <div>
             {message.map((e) => (

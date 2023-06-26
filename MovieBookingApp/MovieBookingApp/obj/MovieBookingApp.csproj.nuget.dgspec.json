@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\.Net Projects\\MovieBookingApp\\MovieBookingApp\\MovieBookingApp\\MovieBookingApp\\MovieBookingApp.csproj": {}
+    "E:\\MovieBookingApp\\Git\\MovieBookingApp\\MovieBookingApp\\MovieBookingApp\\MovieBookingApp.csproj": {}
   },
   "projects": {
-    "D:\\.Net Projects\\MovieBookingApp\\MovieBookingApp\\MovieBookingApp\\MovieBookingApp\\MovieBookingApp.csproj": {
+    "E:\\MovieBookingApp\\Git\\MovieBookingApp\\MovieBookingApp\\MovieBookingApp\\MovieBookingApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\.Net Projects\\MovieBookingApp\\MovieBookingApp\\MovieBookingApp\\MovieBookingApp\\MovieBookingApp.csproj",
+        "projectUniqueName": "E:\\MovieBookingApp\\Git\\MovieBookingApp\\MovieBookingApp\\MovieBookingApp\\MovieBookingApp.csproj",
         "projectName": "MovieBookingApp",
-        "projectPath": "D:\\.Net Projects\\MovieBookingApp\\MovieBookingApp\\MovieBookingApp\\MovieBookingApp\\MovieBookingApp.csproj",
-        "packagesPath": "C:\\Users\\User 2GB\\.nuget\\packages\\",
-        "outputPath": "D:\\.Net Projects\\MovieBookingApp\\MovieBookingApp\\MovieBookingApp\\MovieBookingApp\\obj\\",
+        "projectPath": "E:\\MovieBookingApp\\Git\\MovieBookingApp\\MovieBookingApp\\MovieBookingApp\\MovieBookingApp.csproj",
+        "packagesPath": "C:\\Users\\abhi0\\.nuget\\packages\\",
+        "outputPath": "E:\\MovieBookingApp\\Git\\MovieBookingApp\\MovieBookingApp\\MovieBookingApp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\User 2GB\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\abhi0\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,6 +22,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\sdk\\7.0.302\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -100,7 +101,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     }

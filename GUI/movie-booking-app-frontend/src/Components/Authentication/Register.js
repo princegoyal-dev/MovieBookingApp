@@ -1,20 +1,24 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import image from "../Images/Register.png"
+import image from "../Images/Register.png";
 import { useNavigate } from "react-router-dom";
 import useStore from "../../StateStorage";
+
+// Import Font Awesome icons
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUserPlus, faHome } from "@fortawesome/free-solid-svg-icons";
 
 const Register = () => {
   let navigate = useNavigate();
   const [message, setMessage] = useState("");
   const [showResult, setShowResult] = useState(false);
-  const {storedUsername, storedJwtToken } = useStore((state) => ({
+  const { storedUsername, storedJwtToken } = useStore((state) => ({
     storedUsername: state.loginId,
     storedJwtToken: state.jwtToken,
   }));
   useEffect(() => {
     if (storedUsername != "") {
-      navigate('/Home');
+      navigate("/Home");
     }
   });
 
@@ -38,13 +42,12 @@ const Register = () => {
         setMessage("User Created Successfully");
       })
       .catch((error) => {
-        setMessage("Some Error Occured");
+        setMessage("Some Error Occurred");
       });
   };
   const homeClicked = () => {
-    navigate('/Home');
-  }
-
+    navigate("/Home");
+  };
 
   const containerStyle = {
     display: "flex",
@@ -88,7 +91,7 @@ const Register = () => {
   };
 
   const buttonStyle = {
-    padding: "15px 60px",
+    padding: "14px 40px",
     backgroundColor: "#4caf50",
     color: "white",
     border: "none",
@@ -99,8 +102,16 @@ const Register = () => {
     transition: "background-color 0.3s",
   };
 
-  const buttonHoverStyle = {
-    backgroundColor: "#45a049",
+  const homeStyle = {
+    padding: "5px 20px",
+    backgroundColor: "#1877f2",
+    color: "white",
+    border: "2px wavy black",
+    borderRadius: "25px",
+    cursor: "pointer",
+    fontSize: "14px",
+    fontWeight: "bold",
+    marginTop: "2vh",
   };
 
   const messageStyle = {
@@ -115,7 +126,10 @@ const Register = () => {
     <>
       <div style={containerStyle}>
         <form style={formStyle} onSubmit={handleSubmit}>
-          <h1 style={titleStyle}>Register Page</h1>
+          <h1 style={titleStyle}>
+            <FontAwesomeIcon icon={faUserPlus} style={{ marginRight: "10px" }} />
+            Register Page
+          </h1>
           <input
             style={inputStyle}
             type="text"
@@ -153,12 +167,18 @@ const Register = () => {
             placeholder="Contact No."
           />
           <button style={buttonStyle} type="submit">
+          <FontAwesomeIcon icon={faUserPlus} style={{ marginRight: "10px" }} />
             Register
           </button>
+          <button
+            onClick={homeClicked}
+            style={homeStyle}
+            type="button"
+            value="homeButton"
+          >
+            <FontAwesomeIcon icon={faHome} />
+          </button>
         </form>
-        <button onClick={homeClicked} type="button" value="homeButton">
-            Home
-        </button>
         {showResult && <p style={messageStyle}>{message}</p>}
       </div>
     </>

@@ -1,20 +1,24 @@
 import React, { useState, useEffect } from "react";
-import axios, { all } from "axios";
+import axios from "axios";
 import useStore from "../../StateStorage";
 import image from "../Images/Add.png";
 import { useNavigate } from "react-router-dom";
+
+// Import Font Awesome icons
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHome, faPlus } from "@fortawesome/free-solid-svg-icons";
 
 const Add = () => {
   let navigate = useNavigate();
   const [message, setMessage] = useState("");
   const [showResult, setShowResult] = useState(false);
-  const {storedUsername, storedJwtToken } = useStore((state) => ({
+  const { storedUsername, storedJwtToken } = useStore((state) => ({
     storedUsername: state.loginId,
     storedJwtToken: state.jwtToken,
   }));
   useEffect(() => {
-    if (storedUsername == "") {
-      navigate('/Login');
+    if (storedUsername === "") {
+      navigate("/Login");
     }
   });
   const handleSubmit = async (event) => {
@@ -36,17 +40,18 @@ const Add = () => {
         },
       })
       .then((response) => {
-        setMessage("Movie Added Sucessfully");
+        setMessage("Movie Added Successfully");
       })
       .catch((error) => {
-        setMessage("Some Error Occured");
+        setMessage("Some Error Occurred");
       });
   };
-  
-  const homeClicked = () => {
-    navigate('/Home');
-  }
 
+  const homeClicked = () => {
+    navigate("/Home");
+  };
+
+  // CSS styles
   const containerStyle = {
     display: "flex",
     flexDirection: "column",
@@ -100,8 +105,16 @@ const Add = () => {
     transition: "background-color 0.3s",
   };
 
-  const buttonHoverStyle = {
-    backgroundColor: "#45a049",
+  const homeStyle = {
+    padding: "5px 20px",
+    backgroundColor: "#1877f2",
+    color: "white",
+    border: "2px wavy black",
+    borderRadius: "25px",
+    cursor: "pointer",
+    fontSize: "14px",
+    fontWeight: "bold",
+    marginTop: "2vh",
   };
 
   const messageStyle = {
@@ -116,7 +129,10 @@ const Add = () => {
     <>
       <div style={containerStyle}>
         <form style={formStyle} onSubmit={handleSubmit}>
-          <h1 style={titleStyle}>Add Movies</h1>
+          <h1 style={titleStyle}>
+            <FontAwesomeIcon icon={faPlus} style={{ marginRight: "10px" }} />
+            Add Movies
+          </h1>
           <br />
           <table>
             <tbody>
@@ -175,10 +191,11 @@ const Add = () => {
             </tbody>
           </table>
           <input type="submit" value="Add Movie" style={buttonStyle} />
-        </form>
-        <button onClick={homeClicked} type="button" value="homeButton">
+          <button onClick={homeClicked} style={homeStyle} type="button">
+            <FontAwesomeIcon icon={faHome} style={{ marginRight: "5px" }} />
             Home
-        </button>
+          </button>
+        </form>
         {showResult && <p style={messageStyle}>{message}</p>}
       </div>
     </>
