@@ -46,10 +46,10 @@ const SearchMovie = () => {
         }
       )
       .then((response) => {
-        for (let data in response.data) {
-          message.push(response.data[data]);
-        }
-        console.log(message);
+        var arr = [];
+        arr.push(response.data);
+        console.log(arr);
+        setMessage(arr);
         setShowResult(true);
       })
       .catch((error) => {
@@ -179,17 +179,13 @@ const SearchMovie = () => {
             Home
           </button>
         </form>
-        {showResult && (
-          <div>
-            {message.map((e) => (
-              <div key={e.id}>
-                {e.name}
-                {e.theatreName}
-                {e.isAvailable}
-              </div>
-            ))}
-          </div>
-        )}
+        {showResult && message[0].map((movie, index) => (
+          <>
+          <h2>MovieName: {movie.name}</h2>
+          <h3>Theate Name: {movie.theatreName}</h3>
+          <h3>Tickets Available: {movie.isAvailable == true ? "YES" : "NO"}</h3>
+          </>
+        ))}
         {showError && <p style={errorStyle}>{errorMessage}</p>}
       </div>
     </>

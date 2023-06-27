@@ -11,10 +11,13 @@ import {
   faTicketAlt,
   faSearch,
   faEdit,
+  faStore,
+  faPlus,
 } from "@fortawesome/free-solid-svg-icons";
 
 const Home = () => {
   let navigate = useNavigate();
+  const [isAdmin, setIsAdmin] = useState(false);
   const { storedUsername, removeValues } = useStore((state) => ({
     storedUsername: state.loginId,
     removeValues: state.removeValues,
@@ -23,6 +26,9 @@ const Home = () => {
   useEffect(() => {
     if (storedUsername === "") {
       navigate("/Login");
+    }
+    if(storedUsername == "MasterAdmin") {
+      setIsAdmin(true);
     }
   });
 
@@ -45,6 +51,10 @@ const Home = () => {
 
   const updateTicketClicked = () => {
     navigate("/UpdateTicket");
+  };
+
+  const addMovieClicked = () => {
+    navigate("/AddMovie");
   };
 
   // CSS styles
@@ -185,6 +195,15 @@ const Home = () => {
               <FontAwesomeIcon icon={faEdit} />
               <span className="button-text-wrapper">Update Ticket</span>
             </button>
+            {isAdmin && 
+            <button
+              className="action-button"
+              onClick={addMovieClicked}
+              value="AddMovie"
+            >
+              <FontAwesomeIcon icon={faPlus} />
+              <span className="button-text-wrapper">Add Movie</span>
+            </button>}
           </div>
         </div>
       </div>

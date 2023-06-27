@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import useStore from "../../StateStorage";
-import image from "../Images/Login.png";
+import image from "../Images/login.png";
 import Forgot from "./Forgot";
 import { useNavigate } from "react-router-dom";
 
@@ -176,7 +176,7 @@ const Login = () => {
           </button>
           <a style={forgotPassword} onClick={changePasswordClicked}>
             <FontAwesomeIcon icon={faQuestionCircle} style={{ marginRight: "5px" }} />
-            Forgotten password?
+            Update password?
           </a>
           <button
             onClick={registerClicked}

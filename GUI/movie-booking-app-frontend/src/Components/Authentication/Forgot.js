@@ -136,7 +136,7 @@ const Forgot = () => {
         <form style={formStyle} onSubmit={handleSubmit}>
           <h1 style={titleStyle}>
             <FontAwesomeIcon icon={faUnlockAlt} style={{ marginRight: "10px" }} />
-            Forgot Password
+            Change Password
           </h1>
           <input
             style={inputStyle}
