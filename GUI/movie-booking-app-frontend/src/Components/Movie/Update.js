@@ -27,17 +27,22 @@ const Update = () => {
     setShowResult(false);
     setMessage("");
     event.preventDefault();
+    // console.log()
     const data = {
       id: event.target.id.value,
-      namemovieName: event.target.movieName.value,
-      theaterName: event.target.theaterName.value,
+      movieName: event.target.movieName.value,
+      theatreName: event.target.theatreName.value,
       numberOfTickets: event.target.numberOfTickets.value,
       seatNumber: event.target.seatNumber.value,
     };
     setShowResult(true);
     // event.target.reset();
     await axios
-      .post("https://localhost:7222/api/MovieBooking/ticket/update", data)
+      .post("https://localhost:7222/api/MovieBooking/ticket/update", data, {
+        headers: {
+          Authorization: "Bearer " + storedJwtToken,
+        },
+      })
       .then((response) => {
         setMessage("Ticket Updation Successful");
       })

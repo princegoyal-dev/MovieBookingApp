@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import useStore from "../../StateStorage";
-import image from "../Images/login.png";
+import image from "../Images/Login.png";
 import Forgot from "./Forgot";
 import { useNavigate } from "react-router-dom";
 
@@ -136,7 +136,7 @@ const Login = () => {
 
   const footerStyle = {
     marginTop: "20px",
-    marginRight: "185px",
+    marginRight: "14vw",
     color: "#777",
     fontSize: "12px",
     textAlign: "center",

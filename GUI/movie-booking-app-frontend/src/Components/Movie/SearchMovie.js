@@ -11,6 +11,7 @@ import { faHome, faSearch } from "@fortawesome/free-solid-svg-icons";
 const SearchMovie = () => {
   let navigate = useNavigate();
   const [message, setMessage] = useState([]);
+  const [selectedMovie, setSelectedMovie] = useState(null);
   const [showResult, setShowResult] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
   const [showError, setShowError] = useState(false);
@@ -28,13 +29,12 @@ const SearchMovie = () => {
   const handleSubmit = async (event) => {
     setShowResult(false);
     setShowError(false);
-    setMessage("");
+    setMessage([]);
     event.preventDefault();
     const data = {
       movieName: event.target.movieName.value,
     };
 
-    // event.target.reset();
     await axios
       .get(
         "https://localhost:7222/api/MovieBooking/Movies/Search/MovieName?movieName=" +
@@ -46,16 +46,25 @@ const SearchMovie = () => {
         }
       )
       .then((response) => {
-        var arr = [];
-        arr.push(response.data);
-        console.log(arr);
-        setMessage(arr);
-        setShowResult(true);
+        const movies = response.data;
+        if (movies.length > 0) {
+          setMessage(movies);
+          setSelectedMovie(movies[0]);
+          setShowResult(true);
+          setShowError(false);
+        } else {
+          setErrorMessage("No Such Movies Found");
+          setShowError(true);
+        }
       })
       .catch((error) => {
-        setErrorMessage("No Such Movies Found");
+        setErrorMessage("An Error Occurred");
         setShowError(true);
       });
+  };
+
+  const handleMovieSelect = (movie) => {
+    setSelectedMovie(movie);
   };
 
   const homeClicked = () => {
@@ -83,8 +92,8 @@ const SearchMovie = () => {
     alignItems: "center",
     backgroundColor: "rgba(255, 255, 255, 0.8)",
     padding: "40px",
-    marginLeft: "120vh",
-    marginTop: "15vh",
+    marginLeft: "56vw",
+    // marginTop: "15vh",
     borderRadius: "30px",
     boxShadow: "1 2px 4px rgba(0, 0, 0, 1)",
   };
@@ -136,14 +145,34 @@ const SearchMovie = () => {
   };
 
   const iconStyle = {
-    marginRight: "5px",
+    marginRight: "10px",
   };
 
-  const messageStyle = {
-    marginTop: "20px",
-    fontSize: "18px",
+  const dropdownStyle = {
+    padding: "10px 15px",
+    width: "300px",
+    marginBottom: "2vh",
+    fontSize: "14px",
+    borderRadius: "25px",
+    
+  };
+
+  const movieDetailsStyle = {
+    backgroundColor: "rgba(255, 255, 255, 0.8)",
+    padding: "20px",
+    borderRadius: "15px",
+    marginTop: "5vh",
+    marginLeft: "56vw",
+    textAlign: "center",
+
+  };
+
+  const movieTitleStyle = {
+    fontSize: "25px",
     fontWeight: "bold",
-    color: "#4caf50",
+    marginBottom: "10px",
+    textAlign: "center",
+    
   };
 
   const errorStyle = {
@@ -175,17 +204,38 @@ const SearchMovie = () => {
             type="button"
             value="homeButton"
           >
-            <FontAwesomeIcon icon={faHome} style={iconStyle} />
-            Home
+            <FontAwesomeIcon icon={faHome} />
           </button>
         </form>
-        {showResult && message[0].map((movie, index) => (
-          <>
-          <h2>MovieName: {movie.name}</h2>
-          <h3>Theate Name: {movie.theatreName}</h3>
-          <h3>Tickets Available: {movie.isAvailable == true ? "YES" : "NO"}</h3>
-          </>
-        ))}
+        {showResult && (
+          <div style={movieDetailsStyle}>
+            <select
+              style={dropdownStyle}
+              value={selectedMovie}
+              onChange={(e) =>
+                handleMovieSelect(
+                  message.find((movie) => movie.name === e.target.value)
+                )
+              }
+            >
+              {message.map((movie) => (
+                <option key={movie.name} value={movie.name}>
+                {movie.name} 
+                </option>
+              ))}
+            </select>
+            {selectedMovie && (
+              <>
+                <h2 style={movieTitleStyle}>Movie Name: {selectedMovie.name}</h2>
+                <h3>Theater Name: {selectedMovie.theatreName}</h3>
+                <h3>
+                  Tickets Available:{" "}
+                  {selectedMovie.isAvailable ? "YES" : "NO"}
+                </h3>
+              </>
+            )}
+          </div>
+        )}
         {showError && <p style={errorStyle}>{errorMessage}</p>}
       </div>
     </>

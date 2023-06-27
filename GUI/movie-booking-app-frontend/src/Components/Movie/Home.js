@@ -77,8 +77,8 @@ const Home = () => {
   `;
 
   const sectionTitleStyle = `
-    font-size: 24px;
-    color: #fff;
+    font-size: 30px;
+    color: #000;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   `;
@@ -116,6 +116,7 @@ const Home = () => {
     left: 0;
     right: 0;
     padding: 10px;
+    margin: 5px;
     font-size: 14px;
     color: #000;
     text-align: center;
