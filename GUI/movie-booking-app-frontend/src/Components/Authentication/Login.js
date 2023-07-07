@@ -73,7 +73,7 @@ const Login = () => {
     backgroundColor: "rgba(255, 255, 255, 0.6)",
     padding: "50px",
     marginRight: "19vh",
-    borderRadius: "30px",
+    borderRadius: "5px",
     boxShadow: "0 2px 4px rgba(0, 0, 0, 1)",
   };
 
@@ -86,7 +86,7 @@ const Login = () => {
 
   const inputStyle = {
     padding: "10px",
-    borderRadius: "25px",
+    // borderRadius: "5px",
     border: "1px solid #ccc",
     width: "300px",
     marginBottom: "20px",
@@ -98,7 +98,7 @@ const Login = () => {
     backgroundColor: "#1877f2",
     color: "white",
     border: "none",
-    borderRadius: "25px",
+    borderRadius: "5px",
     cursor: "pointer",
     fontSize: "15px",
     fontWeight: "bold",
@@ -119,7 +119,7 @@ const Login = () => {
     backgroundColor: "#42b72a",
     color: "white",
     border: "none",
-    borderRadius: "25px",
+    borderRadius: "5px",
     cursor: "pointer",
     fontSize: "15px",
     fontWeight: "bold",
@@ -175,8 +175,7 @@ const Login = () => {
             Login
           </button>
           <a style={forgotPassword} onClick={changePasswordClicked}>
-            <FontAwesomeIcon icon={faQuestionCircle} style={{ marginRight: "5px" }} />
-            Update password?
+            Forgotten Password?
           </a>
           <button
             onClick={registerClicked}
@@ -184,7 +183,7 @@ const Login = () => {
             value="Register"
           >
             <FontAwesomeIcon icon={faUserPlus} style={{ marginRight: "5px" }} />
-            Create New Account
+            Register Here!
           </button>
         </form>
         {showResult && <p style={messageStyle}>{message}</p>}

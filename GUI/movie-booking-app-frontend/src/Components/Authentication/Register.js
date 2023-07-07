@@ -69,7 +69,7 @@ const Register = () => {
     alignItems: "center",
     backgroundColor: "rgba(255, 255, 255, 0.8)",
     padding: "30px",
-    borderRadius: "25px",
+    borderRadius: "5px",
     marginRight: "20vh",
     boxShadow: "0 2px 4px rgba(0, 0, 0, 1)",
   };
@@ -83,7 +83,7 @@ const Register = () => {
 
   const inputStyle = {
     padding: "10px",
-    borderRadius: "25px",
+    borderRadius: "5px",
     border: "1px solid #ccc",
     width: "300px",
     marginBottom: "20px",
@@ -95,7 +95,7 @@ const Register = () => {
     backgroundColor: "#4caf50",
     color: "white",
     border: "none",
-    borderRadius: "30px",
+    borderRadius: "5px",
     cursor: "pointer",
     fontSize: "17px",
     fontWeight: "bold",
@@ -107,7 +107,7 @@ const Register = () => {
     backgroundColor: "#1877f2",
     color: "white",
     border: "2px wavy black",
-    borderRadius: "25px",
+    borderRadius: "5px",
     cursor: "pointer",
     fontSize: "14px",
     fontWeight: "bold",
@@ -168,7 +168,7 @@ const Register = () => {
           />
           <button style={buttonStyle} type="submit">
           <FontAwesomeIcon icon={faUserPlus} style={{ marginRight: "10px" }} />
-            Register
+            Register Now
           </button>
           <button
             onClick={homeClicked}

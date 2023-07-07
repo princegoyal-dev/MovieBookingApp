@@ -90,11 +90,11 @@ const SearchMovie = () => {
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
-    backgroundColor: "rgba(255, 255, 255, 0.8)",
+    backgroundColor: "rgba(255, 255, 255, 0.9)",
     padding: "40px",
     marginLeft: "56vw",
     // marginTop: "15vh",
-    borderRadius: "30px",
+    borderRadius: "5px",
     boxShadow: "1 2px 4px rgba(0, 0, 0, 1)",
   };
 
@@ -107,7 +107,7 @@ const SearchMovie = () => {
 
   const inputStyle = {
     padding: "10px",
-    borderRadius: "25px",
+    borderRadius: "5px",
     border: "1px solid #ccc",
     width: "300px",
     marginBottom: "20px",
@@ -122,7 +122,7 @@ const SearchMovie = () => {
     backgroundColor: "#4caf50",
     color: "white",
     border: "none",
-    borderRadius: "25px",
+    borderRadius: "5px",
     cursor: "pointer",
     fontSize: "16px",
     fontWeight: "bold",
@@ -137,7 +137,7 @@ const SearchMovie = () => {
     backgroundColor: "#1877f2",
     color: "white",
     border: "2px wavy black",
-    borderRadius: "25px",
+    borderRadius: "5px",
     cursor: "pointer",
     fontSize: "14px",
     fontWeight: "bold",
@@ -153,14 +153,14 @@ const SearchMovie = () => {
     width: "300px",
     marginBottom: "2vh",
     fontSize: "14px",
-    borderRadius: "25px",
+    borderRadius: "5px",
     
   };
 
   const movieDetailsStyle = {
     backgroundColor: "rgba(255, 255, 255, 0.8)",
     padding: "20px",
-    borderRadius: "15px",
+    borderRadius: "5px",
     marginTop: "5vh",
     marginLeft: "56vw",
     textAlign: "center",

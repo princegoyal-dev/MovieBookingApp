@@ -73,7 +73,7 @@ const Forgot = () => {
     alignItems: "center",
     backgroundColor: "rgba(255, 255, 255, 0.6)",
     padding: "50px",
-    borderRadius: "25px",
+    borderRadius: "5px",
     marginLeft: "105vh",
     boxShadow: "0 2px 4px rgba(0, 0, 0, 1)",
   };
@@ -87,7 +87,7 @@ const Forgot = () => {
 
   const inputStyle = {
     padding: "10px",
-    borderRadius: "25px",
+    borderRadius: "5px",
     border: "1px solid #ccc",
     width: "300px",
     marginBottom: "20px",
@@ -99,7 +99,7 @@ const Forgot = () => {
     backgroundColor: "#4caf50",
     color: "white",
     border: "none",
-    borderRadius: "25px",
+    borderRadius: "5px",
     cursor: "pointer",
     fontSize: "15px",
     fontWeight: "bold",
@@ -111,7 +111,7 @@ const Forgot = () => {
     backgroundColor: "#1877f2",
     color: "white",
     border: "2px wavy black",
-    borderRadius: "25px",
+    borderRadius: "5px",
     cursor: "pointer",
     fontSize: "14px",
     fontWeight: "bold",
@@ -146,7 +146,7 @@ const Forgot = () => {
           />
           <button style={buttonStyle} type="submit">
           <FontAwesomeIcon icon={faUnlockAlt} style={{ marginRight: "10px" }} />
-            Reset Password
+            Submit
           </button>
           <button
             onClick={homeClicked}
@@ -154,8 +154,7 @@ const Forgot = () => {
             type="button"
             value="homeButton"
           >
-            <FontAwesomeIcon icon={faHome} style={{ marginRight: "5px" }} />
-            Home
+            <FontAwesomeIcon icon={faHome} />
           </button>
         </form>
         {showResult && <p style={messageStyle}>{message}</p>}

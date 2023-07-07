@@ -74,7 +74,7 @@ const Change = () => {
     alignItems: "center",
     backgroundColor: "rgba(255, 255, 255, 0.6)",
     padding: "40px",
-    borderRadius: "30px",
+    borderRadius: "5px",
     boxShadow: "0 2px 4px rgba(0, 0, 0, 1)",
   };
 
@@ -87,7 +87,7 @@ const Change = () => {
 
   const inputStyle = {
     padding: "10px",
-    borderRadius: "25px",
+    // borderRadius: "25px",
     border: "1px solid #ccc",
     width: "300px",
     marginBottom: "20px",
@@ -99,7 +99,7 @@ const Change = () => {
     backgroundColor: "#4caf50",
     color: "white",
     border: "none",
-    borderRadius: "25px",
+    borderRadius: "5px",
     cursor: "pointer",
     fontSize: "15px",
     fontWeight: "bold",
@@ -111,7 +111,7 @@ const Change = () => {
     backgroundColor: "#1877f2",
     color: "white",
     border: "2px wavy black",
-    borderRadius: "25px",
+    borderRadius: "5px",
     cursor: "pointer",
     fontSize: "14px",
     fontWeight: "bold",
@@ -131,29 +131,29 @@ const Change = () => {
         <form style={formStyle} onSubmit={handleSubmit}>
           <h1 style={titleStyle}>
             <FontAwesomeIcon icon={faLock} style={{ marginRight: "10px" }} />
-            Change Password
+            Forgot Password
           </h1>
           <input
             style={inputStyle}
             type="text"
             name="loginId"
-            placeholder="loginId"
+            placeholder="Login Id"
           />
           <input
             style={inputStyle}
             type="password"
             name="oldPassword"
-            placeholder="oldPassword"
+            placeholder="Old Password"
           />
           <input
             style={inputStyle}
             type="password"
             name="newPassword"
-            placeholder="newPassword"
+            placeholder="New Password"
           />
           <button style={buttonStyle} type="submit">
           <FontAwesomeIcon icon={faLock} style={{ marginRight: "10px" }} />
-            Change Password
+            Reset Password
           </button>
           <button
             onClick={homeClicked}

@@ -72,7 +72,7 @@ const Add = () => {
     alignItems: "center",
     backgroundColor: "rgba(255, 255, 255, 0.8)",
     padding: "25px",
-    borderRadius: "30px",
+    borderRadius: "10px",
     marginLeft: "115vh",
     boxShadow: "0 2px 4px rgba(0, 0, 0, 1)",
   };
@@ -86,7 +86,7 @@ const Add = () => {
 
   const inputStyle = {
     padding: "10px",
-    borderRadius: "30px",
+    // borderRadius: "30px",
     border: "1px solid #ccc",
     width: "290px",
     marginBottom: "17px",
@@ -98,7 +98,7 @@ const Add = () => {
     backgroundColor: "#4caf50",
     color: "white",
     border: "none",
-    borderRadius: "30px",
+    borderRadius: "5px",
     cursor: "pointer",
     fontSize: "15px",
     fontWeight: "bold",
@@ -110,7 +110,7 @@ const Add = () => {
     backgroundColor: "#1877f2",
     color: "white",
     border: "2px wavy black",
-    borderRadius: "25px",
+    borderRadius: "5px",
     cursor: "pointer",
     fontSize: "14px",
     fontWeight: "bold",
@@ -190,10 +190,9 @@ const Add = () => {
               </tr>
             </tbody>
           </table>
-          <input type="submit" value="Add Movie" style={buttonStyle} />
+          <input type="submit" value="Add" style={buttonStyle} />
           <button onClick={homeClicked} style={homeStyle} type="button">
-            <FontAwesomeIcon icon={faHome} style={{ marginRight: "5px" }} />
-            Home
+            <FontAwesomeIcon icon={faHome} />
           </button>
         </form>
         {showResult && <p style={messageStyle}>{message}</p>}

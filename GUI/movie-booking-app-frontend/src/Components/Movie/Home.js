@@ -27,7 +27,7 @@ const Home = () => {
     if (storedUsername === "") {
       navigate("/Login");
     }
-    if(storedUsername == "MasterAdmin") {
+    if (storedUsername == "MasterAdmin") {
       setIsAdmin(true);
     }
   });
@@ -77,25 +77,27 @@ const Home = () => {
   `;
 
   const sectionTitleStyle = `
-    font-size: 30px;
-    color: #000;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  `;
+  font-size: 30px;
+  background: linear-gradient(to right, #ff00cc, #333399);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+`;
 
   const buttonContainerStyle = `
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
     justify-content: center;
-    margin-top: 20px;
+    margin-top: 10px;
   `;
 
   const buttonStyle = `
     position: relative;
     padding: 20px 40px;
     font-size: 20px;
-    color: #fff;
+    color: #000;
     border: none;
     border-radius: 30px;
     cursor: pointer;
@@ -107,7 +109,7 @@ const Home = () => {
 
   const buttonHoverStyle = `
     transform: translateY(-3px);
-    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.1);
   `;
 
   const buttonTextWrapperStyle = `
@@ -129,6 +131,7 @@ const Home = () => {
 
   const buttonHoverTextWrapperStyle = `
     opacity: 1;
+    background: linear-gradient(to right, #50B4F2, #A2D5F9);
   `;
 
   return (
@@ -148,27 +151,6 @@ const Home = () => {
         `}
       </style>
       <div className="container">
-        <div className="section-container">
-          <h2 className="section-title">Account</h2>
-          <div className="button-container">
-            <button
-              className="action-button"
-              onClick={forgotClicked}
-              value="ChangePassword"
-            >
-              <FontAwesomeIcon icon={faUnlockAlt} />
-              <span className="button-text-wrapper">Change Password</span>
-            </button>
-            <button
-              className="action-button"
-              onClick={logoutClicked}
-              value="Logout"
-            >
-              <FontAwesomeIcon icon={faSignOutAlt} />
-              <span className="button-text-wrapper">Logout</span>
-            </button>
-          </div>
-        </div>
         <div className="section-container">
           <h2 className="section-title">Movies</h2>
           <div className="button-container">
@@ -196,15 +178,38 @@ const Home = () => {
               <FontAwesomeIcon icon={faEdit} />
               <span className="button-text-wrapper">Update Ticket</span>
             </button>
-            {isAdmin && 
+            {isAdmin && (
+              <button
+                className="action-button"
+                onClick={addMovieClicked}
+                value="AddMovie"
+              >
+                <FontAwesomeIcon icon={faPlus} />
+                <span className="button-text-wrapper">Add Movie</span>
+              </button>
+            )}
+          </div>
+        </div>
+
+        <div className="section-container">
+          <h2 className="section-title">Account Actions</h2>
+          <div className="button-container">
             <button
               className="action-button"
-              onClick={addMovieClicked}
-              value="AddMovie"
+              onClick={forgotClicked}
+              value="ChangePassword"
             >
-              <FontAwesomeIcon icon={faPlus} />
-              <span className="button-text-wrapper">Add Movie</span>
-            </button>}
+              <FontAwesomeIcon icon={faUnlockAlt} />
+              <span className="button-text-wrapper">Change Password</span>
+            </button>
+            <button
+              className="action-button"
+              onClick={logoutClicked}
+              value="Logout"
+            >
+              <FontAwesomeIcon icon={faSignOutAlt} />
+              <span className="button-text-wrapper">Logout</span>
+            </button>
           </div>
         </div>
       </div>
@@ -213,4 +218,3 @@ const Home = () => {
 };
 
 export default Home;
-
